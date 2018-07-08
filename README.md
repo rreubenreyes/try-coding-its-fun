@@ -1,4 +1,4 @@
-![Try Coding, It's Fun](https://cl.ly/3Q2U3g0h1h3n/tcif-banner.png)
+![Try Coding, It's Fun](https://cl.ly/1w3l382S1K28/tcif-banner-lg.png)
 
 A blog about the climb of self-taught developers by a climbing self-taught developer.
 
