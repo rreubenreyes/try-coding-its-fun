@@ -1,8 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Try Coding, It's Fun",
-    desc:
-      'A blog about the climb of self-taught developers, by a climbing self-taught developer.',
+    desc: 'A blog about the climb of self-taught developers, by a climbing self-taught developer.'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -14,21 +13,21 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'images',
-        path: `${__dirname}/src/static/images`,
-      },
+        path: `${__dirname}/src/static/images`
+      }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/src/static/posts`,
-      },
+        path: `${__dirname}/src/static/posts`
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
-        excerpt_separator: `<!-- end -->`,
-      },
-    },
-  ],
+        excerpt_separator: `<!-- end -->`
+      }
+    }
+  ]
 }
