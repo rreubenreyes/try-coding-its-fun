@@ -8,13 +8,13 @@ import './index.css'
 const Layout = ({ children, data }) => (
   <div>
     <Helmet
-      title={ data.site.siteMetadata.title }
+      title={data.site.siteMetadata.title}
       meta={[
         { name: 'description', content: 'Sample' },
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header data={ data } siteTitle={ data.site.siteMetadata.title } />
+    <Header data={data} siteTitle={data.site.siteMetadata.title} />
     <div
       style={{
         margin: '0 auto',
@@ -23,8 +23,8 @@ const Layout = ({ children, data }) => (
         paddingTop: 0,
       }}
     >
-      { /* literally a file from ../pages */ }
-      { children() }
+      {/* literally a file from ../pages */}
+      {children()}
     </div>
   </div>
 )
@@ -41,8 +41,8 @@ export const query = graphql`
         desc
       }
     }
-    background: imageSharp( id: { regex: "/bg.jpg/" } ) {
-      sizes( maxWidth: 1080 ) {
+    background: imageSharp(id: { regex: "/bg.jpg/" }) {
+      sizes(maxWidth: 1080) {
         ...GatsbyImageSharpSizes
       }
     }
@@ -50,8 +50,8 @@ export const query = graphql`
       edges {
         node {
           frontmatter {
-              title
-              date( formatString: "MMMM DD, YYYY" )
+            title
+            date(formatString: "MMMM DD, YYYY")
           }
           html
         }
