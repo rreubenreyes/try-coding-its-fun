@@ -1,7 +1,7 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-/* inject fields/data into nodes */
+/* inject additional fields into nodes */
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   if (node.internal.type === 'MarkdownRemark') {
     const { createNodeField } = boundActionCreators
@@ -19,7 +19,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   }
 }
 
-/* create routes and statically inject data into templates */
+/* create routes and statically inject context data into templates */
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const singlePostTemplate = path.resolve('./src/layouts/single-post.js')
   const { createPage } = boundActionCreators
