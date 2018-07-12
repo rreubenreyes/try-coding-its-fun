@@ -21,7 +21,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
 /* create routes and statically inject context data into templates */
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const singlePostTemplate = path.resolve('./src/layouts/single-post.js')
+  const singlePostTemplate = path.resolve('./src/templates/single-post.js')
   const { createPage } = boundActionCreators
   return new Promise((resolve, reject) => {
     graphql(`

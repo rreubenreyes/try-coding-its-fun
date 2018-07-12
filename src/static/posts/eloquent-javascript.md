@@ -1,5 +1,5 @@
 ---
-title: 'test'
+title: 'Eloquent Javascript'
 date: '2018-07-08'
 ---
 
