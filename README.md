@@ -1,6 +1,6 @@
-![Try Coding, It's Fun](https://cl.ly/1H0J0w2r3d3Z/tcif-proto.png)
+# Try Coding, It's Fun
 
-A blog about the climb of self-taught developers by a climbing self-taught developer.
+![Try Coding, It's Fun](https://cl.ly/1H0J0w2r3d3Z/tcif-proto.png)
 
 ## About
 
