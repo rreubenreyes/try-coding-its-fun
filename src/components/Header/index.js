@@ -13,17 +13,29 @@ const HeaderWrapper = styled.div`
   z-index: 1;
 `
 const HeaderContainer = styled.div`
+  display: flex;
   position: relative;
   margin: 0 auto;
   max-width: 960px;
   padding: 1.45rem 1.0875rem;
-  img {
-    position: relative;
-    height: 150px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
   z-index: 2;
+`
+const NavBar = styled.nav`
+  ul {
+    display: flex;
+    list-style: none;
+    li {
+      margin-left: 10px;
+      font-family: sans-serif;
+      a {
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+          border-bottom: 2px solid black;
+        }
+      }
+    }
+  }
 `
 export default class Header extends Component {
   constructor(props) {
@@ -59,12 +71,16 @@ export default class Header extends Component {
         ref={wrapper => (this.wrapper = ReactDOM.findDOMNode(wrapper))}>
         <HeaderContainer>
           <img src={logo} alt="Try Coding, It's Fun" />
-          <Link to="/">
-            <small>back to home</small>
-          </Link>
-          <Link to="/posts/">
-            <small> posts</small>
-          </Link>
+          <NavBar>
+            <ul>
+              <li>
+                <Link to="/">back to home</Link>
+              </li>
+              <li>
+                <Link to="/posts/">posts</Link>
+              </li>
+            </ul>
+          </NavBar>
         </HeaderContainer>
       </HeaderWrapper>
     )

@@ -18,7 +18,7 @@ export default class Posts extends Component {
 
 export const query = graphql`
   query AllPostsQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id

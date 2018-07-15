@@ -20,7 +20,6 @@
         "react"
     ],
     "rules": {
-        "array-element-newline": "consistent",
         "linebreak-style": [
             "error",
             "unix"
