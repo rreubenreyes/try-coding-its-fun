@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1680px" height="420px" viewBox="0 0 1680 420" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51 (57462) - http://www.bohemiancoding.com/sketch -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1680" height="330"></rect>
+    </defs>
+    <g id="website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.35">
+        <g id="home-unscrolled" transform="translate(0.000000, -59.000000)">
+            <g id="bg" transform="translate(0.000000, 59.000000)">
+                <rect id="bg__search-bg" fill="#EDEBEB" fill-rule="nonzero" x="0" y="0" width="1680" height="121"></rect>
+                <rect id="bg__body-bg" fill="#FFFFFF" fill-rule="nonzero" x="0" y="121" width="1680" height="220"></rect>
+                <rect id="bg__button--primary" fill="#D4ECF5" fill-rule="nonzero" x="1522" y="38" width="120" height="45" rx="5"></rect>
+                <g id="bg__search-results" transform="translate(166.000000, 167.000000)" fill-rule="nonzero" opacity="0.500948661">
+                    <g id="search-result__main">
+                        <rect id="text__h1" fill="#80BCFF" x="1.13686838e-13" y="0" width="376" height="24" rx="8"></rect>
+                        <rect id="text__h2" fill="#E8FFE0" x="0" y="27" width="547" height="20" rx="8"></rect>
+                        <rect id="text__h3--upper" fill="#F0F0F0" x="0" y="50" width="547" height="16" rx="8"></rect>
+                        <rect id="text__h3--lower" fill="#F0F0F0" x="1" y="68" width="527" height="16" rx="8"></rect>
+                        <rect id="text__a--upper" fill="#9FA4FF" x="20" y="87" width="527" height="12" rx="6"></rect>
+                        <rect id="text__a--lower" fill="#9FA4FF" x="20" y="101" width="547" height="12" rx="6"></rect>
+                    </g>
+                    <g id="search-result__hidden" transform="translate(2.000000, 140.000000)">
+                        <rect id="text__h1" fill="#80BCFF" x="1.13686838e-13" y="0" width="376" height="24" rx="8"></rect>
+                        <rect id="text__h2" fill="#E8FFE0" x="0" y="27" width="547" height="20" rx="8"></rect>
+                        <rect id="text__h3--upper" fill="#F0F0F0" x="0" y="50" width="547" height="16" rx="8"></rect>
+                        <rect id="text__h3--lower" fill="#F0F0F0" x="1" y="68" width="527" height="16" rx="8"></rect>
+                        <rect id="text__a--upper" fill="#9FA4FF" x="20" y="87" width="527" height="12" rx="6"></rect>
+                        <rect id="text__a--lower" fill="#9FA4FF" x="20" y="101" width="547" height="12" rx="6"></rect>
+                    </g>
+                </g>
+                <g id="bg__search-prompt" transform="translate(166.000000, 35.000000)">
+                    <rect fill="#FFFFFF" fill-rule="nonzero" x="-1.13686838e-13" y="0" width="631" height="45" rx="5"></rect>
+                    <text id="bg__search-prompt--text" font-family="AvenirNext-Regular, Avenir Next" font-size="18" font-weight="normal" letter-spacing="0.53249985" fill="#444444">
+                        <tspan x="13" y="30">why is webpack so confusing</tspan>
+                    </text>
+                </g>
+                <g id="bg__logo" transform="translate(35.000000, 35.000000)" fill-rule="nonzero">
+                    <rect id="red" fill="#FFB2B2" x="0" y="0" width="25" height="45" rx="8"></rect>
+                    <rect id="blue" fill="#B2E5FF" x="56" y="0" width="25" height="45" rx="8"></rect>
+                    <rect id="green" fill="#B2FFC8" x="84" y="0" width="25" height="45" rx="8"></rect>
+                    <rect id="yellow" fill="#FFFBB1" x="28" y="0" width="25" height="45" rx="8"></rect>
+                </g>
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="header-overlay" fill-opacity="0.5" fill="#DDDDDD" fill-rule="nonzero" xlink:href="#path-1"></use>
+            </g>
+        </g>
+    </g>
+</svg>

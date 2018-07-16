@@ -11,7 +11,7 @@ const SinglePost = ({ data }) => {
           __html: data.markdownRemark.html
         }}
       />
-      <Link to="/posts/">
+      <Link to="/">
         <small>Back to index</small>
       </Link>
     </div>
