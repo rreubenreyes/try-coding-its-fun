@@ -6,13 +6,20 @@ const ContentWrapper = styled.div`
   display: flex;
   position: relative;
   height: 100%;
-  position: relative;
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
+  }
 `
 const SidebarContainer = styled.div`
   flex-basis: 25vw;
-  font-family: 'Quicksand', sans-serif;
   flex-grow: 1;
+  font-family: 'Quicksand', sans-serif;
   text-align: right;
+  @media (max-width: 960px) {
+    flex-basis: 100vw;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
 `
 const PostsContainer = styled.div`
   flex-grow: 1;
@@ -25,6 +32,9 @@ const Divider = styled.div`
   font-size: 5px;
   height: auto;
   margin: 0 2rem;
+  @media (max-width: 960px) {
+    display: none;
+  }
 `
 export default class IndexPage extends Component {
   constructor(props) {

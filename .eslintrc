@@ -28,7 +28,7 @@
         "no-unused-vars": "warn",
         "quotes": [
             "error",
-            "single",
+            "backtick",
             { "allowTemplateLiterals": true }
         ],
         "react/jsx-uses-vars": [2],
