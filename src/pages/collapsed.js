@@ -26,7 +26,7 @@ const Divider = styled.div`
   height: auto;
   margin: 0 2rem;
 `
-export default class IndexPage extends Component {
+export default class TempIndexPage extends Component {
   constructor(props) {
     super(props)
   }
@@ -48,7 +48,7 @@ export default class IndexPage extends Component {
 }
 
 export const query = graphql`
-  query FrontPagePostsQuery {
+  query TempPagePostsQuery {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
