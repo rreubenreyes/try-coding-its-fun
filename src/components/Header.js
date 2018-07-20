@@ -1,17 +1,12 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
 import logo from '../../static/images/logo.svg'
 import headerBg from '../../static/images/header-bg.svg'
 import VisibilitySensor from 'react-visibility-sensor'
+import Nav from './nav'
+import Searchbar from './searchbar'
 
-const COLORS = {
-  tcifRed: 'rgba(252, 70, 117, 0.85)',
-  tcifGreen: 'rgba(155, 215, 99, 0.85)',
-  tcifBlue: 'rgba(104, 213, 226, 0.85)',
-  tcifYellow: 'rgba(254, 209, 84, 0.85)'
-}
 const keyframes = {
   animation: {
     transition: '.25s',
@@ -75,55 +70,6 @@ const HeaderContainer = styled.div.attrs(keyframes.container)`
     }
   }
 `
-const NavBar = styled.nav`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-`
-const NavButton = styled(Link)`
-  position: relative;
-  /* face: */
-  background: #474843;
-  box-shadow: 0 4px 0 0 ${props => COLORS[props.color]};
-  border-radius: 5px;
-  /* text: */
-  color: #ffffff;
-  font-size: calc(0.5rem + 0.5vh);
-  font-family: 'Quicksand', sans-serif;
-  letter-spacing: 0.75px;
-  margin: auto 0.1rem;
-  padding: 0.05rem 1rem 0.05rem 0.5rem;
-  text-decoration: none;
-  transition: 0.2s;
-  transition-timing-function: cubic-bezier(0.2, 0.4, 0.55, 0.1);
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0 0 ${props => COLORS[props.color]};
-  }
-`
-const SearchBar = styled.input.attrs(keyframes.searchbar)`
-  position: absolute;
-  top: ${props => props[props.view].top};
-  /* face: */
-  background: #fff;
-  border: 1px solid transparent;
-  border-radius: 25px;
-  box-shadow: 0 2px 0 0 #ccc;
-  /* text: */
-  color: #656565;
-  font-style: italic;
-  letter-spacing: 0.53px;
-  padding: 0 0.5rem;
-  transition: ${keyframes.animation.transition};
-  transition-timing-function: ${keyframes.animation.timing};
-  width: calc(200px + 15vw);
-  /* input: */
-  z-index: 3;
-  &:focus {
-    box-shadow: 0 2px 0 0 #ccc;
-    outline: none !important;
-  }
-`
 export default class Header extends Component {
   constructor(props) {
     super(props)
@@ -152,23 +98,13 @@ export default class Header extends Component {
     return (
       <HeaderWrapper image={headerBg} view={this.state.view}>
         <HeaderContainer view={this.state.view}>
-          <SearchBar placeholder="search blog posts" view={this.state.view} />
+          <Searchbar view={this.state.view} />
           <VisibilitySensor onChange={v => this.handleVisibilityChange(v)} partialVisibility={true}>
             <Link to="/">
               <img src={logo} alt="Try Coding, It's Fun" />
             </Link>
           </VisibilitySensor>
-          <NavBar ref={nav => (this.nav = nav)}>
-            <NavButton to="/posts" color="tcifRed">
-              {'weeklies'}
-            </NavButton>
-            <NavButton to="/" color="tcifBlue">
-              {'cool projects'}
-            </NavButton>
-            <NavButton to="/" color="tcifGreen">
-              {'the author'}
-            </NavButton>
-          </NavBar>
+          <Nav />
         </HeaderContainer>
       </HeaderWrapper>
     )

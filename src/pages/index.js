@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PostListing from '../components/PostListing'
+import PostListing from '../components/post-listing'
 import styled from 'styled-components'
 
 const ContentWrapper = styled.div`
