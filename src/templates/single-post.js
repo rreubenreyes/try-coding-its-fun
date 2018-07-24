@@ -1,20 +1,35 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import FlexContainer from '../components/flex-container'
+import styled from 'styled-components'
 
+const Post = styled.div`
+  * {
+    margin: 0;
+  }
+  small {
+    color: #9a86ee;
+  }
+`
+const Body = styled.div`
+  margin-top: 0.5rem;
+`
 const SinglePost = ({ data }) => {
   return (
-    <div>
-      <small>{data.markdownRemark.frontmatter.date}</small>
-      <h1>{data.markdownRemark.frontmatter.title}</h1>
-      <div
-        dangerouslySetInnerHTML={{
-          __html: data.markdownRemark.html
-        }}
-      />
-      <Link to="/">
-        <small>Back to index</small>
-      </Link>
-    </div>
+    <FlexContainer
+      renderMain={() => (
+        <Post>
+          <h1>{data.markdownRemark.frontmatter.title}</h1>
+          <small>{data.markdownRemark.frontmatter.date}</small>
+          <Body
+            dangerouslySetInnerHTML={{
+              __html: data.markdownRemark.html
+            }}
+          />
+        </Post>
+      )}
+      renderSidebar={() => <h5>Share this post</h5>}
+    />
   )
 }
 

@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
+const keyframes = {
+  animation: {
+    transition: '.15s',
+    timing: 'cubic-bezier(.15, .38, .91, .71)'
+  },
+  searchbar: {
+    default: { top: `calc(161px + 10vh)` },
+    collapsed: { top: `calc(35px + 10vh)` }
+  }
+}
 const SearchInput = styled.input.attrs(keyframes.searchbar)`
   position: absolute;
   top: ${props => props[props.view].top};
@@ -14,10 +24,10 @@ const SearchInput = styled.input.attrs(keyframes.searchbar)`
   color: #656565;
   font-style: italic;
   letter-spacing: 0.53px;
-  padding: 0 0.5rem;
+  padding: 0.125rem 1rem;
   transition: ${keyframes.animation.transition};
   transition-timing-function: ${keyframes.animation.timing};
-  width: calc(200px + 15vw);
+  width: calc(400px + 15vw);
   /* input: */
   z-index: 3;
   &:focus {
@@ -25,7 +35,6 @@ const SearchInput = styled.input.attrs(keyframes.searchbar)`
     outline: none !important;
   }
 `
-
 export default class Searchbar extends Component {
   static propTypes = {
     view: PropTypes.string.isRequired
@@ -47,7 +56,7 @@ export default class Searchbar extends Component {
   render() {
     return (
       <SearchInput
-        onChange={this.handleChange()}
+        onChange={e => this.handleChange(e)}
         placeholder="search blog posts"
         view={this.props.view}
         value={this.state.input}

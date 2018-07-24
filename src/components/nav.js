@@ -1,8 +1,13 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import appColors from '../../static/data/app-colors'
 
+const appColors = {
+  tcifRed: 'rgba(252, 70, 117, 0.85)',
+  tcifGreen: 'rgba(155, 215, 99, 0.85)',
+  tcifBlue: 'rgba(104, 213, 226, 0.85)',
+  tcifYellow: 'rgba(254, 209, 84, 0.85)'
+}
 const NavBar = styled.nav`
   display: flex;
   justify-content: center;
@@ -29,18 +34,20 @@ const NavButton = styled(Link)`
     box-shadow: 0 6px 0 0 ${props => appColors[props.color]};
   }
 `
-export default (Nav = () => {
+const Nav = () => {
   return (
     <NavBar>
-      <NavButton to="/posts" color="tcifRed">
+      <NavButton to="/coming-soon" color="tcifRed">
         {'weeklies'}
       </NavButton>
-      <NavButton to="/" color="tcifBlue">
+      <NavButton to="/coming-soon" color="tcifBlue">
         {'cool projects'}
       </NavButton>
-      <NavButton to="/" color="tcifGreen">
+      <NavButton to="/about" color="tcifGreen">
         {'the author'}
       </NavButton>
     </NavBar>
   )
-})
+}
+
+export default Nav

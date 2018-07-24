@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
-import logo from '../../static/images/logo.svg'
-import headerBg from '../../static/images/header-bg.svg'
-import VisibilitySensor from 'react-visibility-sensor'
+import logo from '../static/images/logo.svg'
+import headerBg from '../static/images/header-bg.svg'
+// import VisibilitySensor from 'react-visibility-sensor'
 import Nav from './nav'
 import Searchbar from './searchbar'
 
 const keyframes = {
   animation: {
-    transition: '.25s',
-    timing: 'cubic-bezier(0.2, 0.4, 0.55, 0.1)'
+    transition: '.15s',
+    timing: 'cubic-bezier(.15, .38, .91, .71)'
   },
   container: {
     default: { padding: `calc(2rem + 4vh) 1.0875rem` },
@@ -28,10 +28,6 @@ const keyframes = {
       }
     }
   },
-  searchbar: {
-    default: { top: `calc(161px + 10vh)` },
-    collapsed: { top: `calc(35px + 10vh)` }
-  },
   wrapper: {
     default: { height: `calc(175px + 10vh)` },
     collapsed: { height: `calc(50px + 10vh)` }
@@ -40,12 +36,16 @@ const keyframes = {
 const HeaderWrapper = styled.div.attrs(keyframes.wrapper)`
   position: relative;
   background-image: url(${props => props.image});
+  background-attachment: fixed;
   height: ${props => props[props.view].height};
   margin-bottom: 3rem;
   transition: ${keyframes.animation.transition};
   transition-timing-function: ${keyframes.animation.timing};
   width: 100%;
   z-index: 1;
+  @media (max-width: 960px) {
+    background-attachment: scroll;
+  }
 `
 const HeaderContainer = styled.div.attrs(keyframes.container)`
   display: flex;
@@ -73,37 +73,34 @@ const HeaderContainer = styled.div.attrs(keyframes.container)`
 export default class Header extends Component {
   constructor(props) {
     super(props)
-    this.nav = null
     this.state = {
-      view: props.location.pathname === '/' ? 'default' : 'collapsed'
+      view: 'default'
     }
   }
-  componentDidMount() {
-    console.log(this.nav)
-  }
-  componentDidUpdate(prevProps) {
-    const path = this.props.location.pathname
-    if (path !== prevProps.location.pathname) {
-      if (path === '/') {
-        this.setState({ view: 'default' })
-      } else {
-        this.setState({ view: 'collapsed' })
-      }
-    }
-  }
-  handleVisibilityChange(visibility) {
-    console.log(`Header visible: ${visibility ? 'yes' : 'no'}`)
-  }
+  // componentDidMount() {
+  //   console.log(this.nav)
+  // }
+  // // componentDidUpdate(prevProps) {
+  // //   const path = this.props.location.pathname
+  // //   if (path !== prevProps.location.pathname) {
+  // //     if (path === '/') {
+  // //       this.setState({ view: 'default' })
+  // //     } else {
+  // //       this.setState({ view: 'collapsed' })
+  // //     }
+  // //   }
+  // // }
+  // handleVisibilityChange(visibility) {
+  //   console.log(`Header visible: ${visibility ? 'yes' : 'no'}`)
+  // }
   render() {
     return (
       <HeaderWrapper image={headerBg} view={this.state.view}>
         <HeaderContainer view={this.state.view}>
           <Searchbar view={this.state.view} />
-          <VisibilitySensor onChange={v => this.handleVisibilityChange(v)} partialVisibility={true}>
-            <Link to="/">
-              <img src={logo} alt="Try Coding, It's Fun" />
-            </Link>
-          </VisibilitySensor>
+          <Link to="/">
+            <img src={logo} alt="Try Coding, It's Fun" />
+          </Link>
           <Nav />
         </HeaderContainer>
       </HeaderWrapper>

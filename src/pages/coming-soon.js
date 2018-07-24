@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
 
-export default class NotFoundPage extends Component {
+export default class ComingSoon extends Component {
   constructor(props) {
     super(props)
   }
@@ -9,9 +9,7 @@ export default class NotFoundPage extends Component {
     return (
       <FlexContainer
         renderMain={() => {
-          return (
-            <h3>This page doesn't exist. How'd you even get here? Leave the poor URL bar alone.</h3>
-          )
+          return <h3>Whoops! We're still working on this section. Check back soon!</h3>
         }}
         renderSidebar={() => null}
       />
