@@ -2,14 +2,33 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
+import Searchbar from '../components/searchbar'
+import _ from 'lodash'
 import './index.css'
+import { createContext } from 'vm'
 
 export default class Layout extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      filtered: null
+    }
+  }
+  componentDidUpdate(prevProps) {
+    if (this.props.location.pathname !== prevProps.location.pathname) {
+      this.setState({ filtered: null })
+    }
+  }
+  filterCurrentData(searchInput) {
+    this.setState({ filtered: searchInput })
+    console.log(searchInput)
   }
   render() {
-    const { data, location } = this.props
+    const { data } = this.props
+    const debounceFilterCurrentData = _.debounce(this.filterCurrentData, 100, {
+      maxWait: 1000
+    }).bind(this)
+    // const SearchContext = createContext({ filtered: this.state.searchInput })
     return (
       <div>
         <Helmet
@@ -19,8 +38,11 @@ export default class Layout extends Component {
             { name: 'keywords', content: 'sample, something' }
           ]}
         />
-        <Header data={data} location={location} />
-
+        <Header data={data} />
+        <Searchbar
+          filterCurrentData={searchInput => debounceFilterCurrentData(searchInput)}
+          view="default"
+        />
         <div
           style={{
             margin: '0 auto',

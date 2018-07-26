@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import _ from 'lodash'
 
 const keyframes = {
   animation: {
@@ -35,8 +36,14 @@ const SearchInput = styled.input.attrs(keyframes.searchbar)`
     outline: none !important;
   }
 `
+const SearchWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+`
+
 export default class Searchbar extends Component {
   static propTypes = {
+    filterCurrentData: PropTypes.func.isRequired,
     view: PropTypes.string.isRequired
   }
   constructor(props) {
@@ -47,20 +54,19 @@ export default class Searchbar extends Component {
   }
   handleChange(e) {
     e.preventDefault()
-    this.setState({
-      input: e.target.value
-    })
-    // TODO: add actual search functionality
-    // need a search button and a schema/query that accommodates blog post searches
+    this.setState({ input: e.target.value })
+    this.props.filterCurrentData(e.target.value)
   }
   render() {
     return (
-      <SearchInput
-        onChange={e => this.handleChange(e)}
-        placeholder="search blog posts"
-        view={this.props.view}
-        value={this.state.input}
-      />
+      <SearchWrapper>
+        <SearchInput
+          onChange={e => this.handleChange(e)}
+          placeholder="search blog posts"
+          view={this.props.view}
+          value={this.state.input}
+        />
+      </SearchWrapper>
     )
   }
 }

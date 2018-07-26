@@ -5,7 +5,6 @@ import logo from '../static/images/logo.svg'
 import headerBg from '../static/images/header-bg.svg'
 // import VisibilitySensor from 'react-visibility-sensor'
 import Nav from './nav'
-import Searchbar from './searchbar'
 
 const keyframes = {
   animation: {
@@ -97,7 +96,6 @@ export default class Header extends Component {
     return (
       <HeaderWrapper image={headerBg} view={this.state.view}>
         <HeaderContainer view={this.state.view}>
-          <Searchbar view={this.state.view} />
           <Link to="/">
             <img src={logo} alt="Try Coding, It's Fun" />
           </Link>
