@@ -28,7 +28,7 @@ const SinglePost = ({ data }) => {
           />
         </Post>
       )}
-      renderSidebar={() => <h5>Share this post</h5>}
+      renderSidebar={() => 'Share this post'}
     />
   )
 }

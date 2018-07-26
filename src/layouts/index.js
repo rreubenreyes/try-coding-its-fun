@@ -4,13 +4,14 @@ import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Searchbar from '../components/searchbar'
 import _ from 'lodash'
+import VisibilitySensor from 'react-visibility-sensor'
 import './index.css'
-import { createContext } from 'vm'
 
 export default class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      applyFixedPosition: false,
       filtered: null
     }
   }
@@ -19,16 +20,21 @@ export default class Layout extends Component {
       this.setState({ filtered: null })
     }
   }
-  filterCurrentData(searchInput) {
+  handleFilters(searchInput) {
     this.setState({ filtered: searchInput })
     console.log(searchInput)
   }
+  handleVisibility(isVisible) {
+    this.setState({
+      applyFixedPosition: isVisible
+    })
+    console.log(isVisible)
+  }
   render() {
     const { data } = this.props
-    const debounceFilterCurrentData = _.debounce(this.filterCurrentData, 100, {
+    const debounceHandleFilters = _.debounce(this.handleFilters, 100, {
       maxWait: 1000
     }).bind(this)
-    // const SearchContext = createContext({ filtered: this.state.searchInput })
     return (
       <div>
         <Helmet
@@ -38,9 +44,15 @@ export default class Layout extends Component {
             { name: 'keywords', content: 'sample, something' }
           ]}
         />
-        <Header data={data} />
+        <VisibilitySensor
+          onChange={isVisible => {
+            this.handleVisibility(isVisible)
+          }}
+          partialVisibility={true}>
+          <Header data={data} />
+        </VisibilitySensor>
         <Searchbar
-          filterCurrentData={searchInput => debounceFilterCurrentData(searchInput)}
+          handleFilters={searchInput => debounceHandleFilters(searchInput)}
           view="default"
         />
         <div
@@ -50,7 +62,10 @@ export default class Layout extends Component {
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0
           }}>
-          {this.props.children()}
+          {this.props.children({
+            ...this.props,
+            filtered: this.state.filtered
+          })}
         </div>
       </div>
     )

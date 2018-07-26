@@ -43,7 +43,7 @@ const SearchWrapper = styled.div`
 
 export default class Searchbar extends Component {
   static propTypes = {
-    filterCurrentData: PropTypes.func.isRequired,
+    handleFilters: PropTypes.func.isRequired,
     view: PropTypes.string.isRequired
   }
   constructor(props) {
@@ -55,7 +55,7 @@ export default class Searchbar extends Component {
   handleChange(e) {
     e.preventDefault()
     this.setState({ input: e.target.value })
-    this.props.filterCurrentData(e.target.value)
+    this.props.handleFilters(e.target.value)
   }
   render() {
     return (

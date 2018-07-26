@@ -15,9 +15,7 @@ export default class IndexPage extends Component {
             return <PostListing key={node.id} post={node} />
           })
         }}
-        renderSidebar={() => (
-          <h5>A blog about the climb of self-taught devs, by a self-taught dev.</h5>
-        )}
+        renderSidebar={() => 'A blog about the climb of self-taught devs, by a self-taught dev.'}
       />
     )
   }

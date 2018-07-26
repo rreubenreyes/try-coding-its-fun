@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const ContentWrapper = styled.div`
   display: flex;
-  position: relative;
   height: 100%;
   flex-wrap: no-wrap;
   justify-content: center;
@@ -16,14 +15,15 @@ const SidebarContainer = styled.div`
   flex-basis: ${props => (props.flex ? 'calc(25vw - 0.5px)' : 0)};
   flex-grow: ${props => (props.flex ? 1 : 0)};
   font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  opacity: ${props => (props.animate ? 1 : 0)};
   text-align: right;
   transform: ${props => (props.animate ? 'translateX(0%)' : 'translateX(-1000%)')};
-  transition: 0.1s;
+  transition: 0.2s;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
-  padding-top: 0.5rem;
   @media (max-width: 960px) {
     flex-basis: 100vw;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     text-align: center;
   }
 `
@@ -38,7 +38,6 @@ const MainContainer = styled.div`
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
 `
 const Divider = styled.div`
-  position: relative;
   background-color: #979797;
   flex-basis: 1px;
   flex-grow: 0;

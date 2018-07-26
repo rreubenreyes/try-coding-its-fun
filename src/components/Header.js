@@ -3,7 +3,6 @@ import Link from 'gatsby-link'
 import styled from 'styled-components'
 import logo from '../static/images/logo.svg'
 import headerBg from '../static/images/header-bg.svg'
-// import VisibilitySensor from 'react-visibility-sensor'
 import Nav from './nav'
 
 const keyframes = {

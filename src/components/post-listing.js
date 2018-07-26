@@ -26,7 +26,7 @@ const PostLink = styled(Link)`
     margin-top: -0.125rem;
     transform: scaleX(0);
     transform-origin: 0% 50%;
-    transition: transform 0.25s;
+    transition: transform 0.2s;
     transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
     width: 100%;
   }
