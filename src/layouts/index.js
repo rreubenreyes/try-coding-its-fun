@@ -1,9 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component, createContext } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Searchbar from '../components/searchbar'
 import _ from 'lodash'
+import { VisibilityContext } from '../data/visibility-context'
 import VisibilitySensor from 'react-visibility-sensor'
 import './index.css'
 
@@ -11,7 +12,7 @@ export default class Layout extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      applyFixedPosition: false,
+      headerVisible: false,
       filtered: null
     }
   }
@@ -26,7 +27,7 @@ export default class Layout extends Component {
   }
   handleVisibility(isVisible) {
     this.setState({
-      applyFixedPosition: isVisible
+      headerVisible: isVisible
     })
     console.log(isVisible)
   }
@@ -36,7 +37,7 @@ export default class Layout extends Component {
       maxWait: 1000
     }).bind(this)
     return (
-      <div>
+      <div value={{ headerVisible: this.state.headerVisible }}>
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -62,10 +63,12 @@ export default class Layout extends Component {
             padding: '0px 1.0875rem 1.45rem',
             paddingTop: 0
           }}>
-          {this.props.children({
-            ...this.props,
-            filtered: this.state.filtered
-          })}
+          <VisibilityContext.Provider value={this.state.headerVisible}>
+            {this.props.children({
+              ...this.props,
+              filtered: this.state.filtered
+            })}
+          </VisibilityContext.Provider>
         </div>
       </div>
     )
