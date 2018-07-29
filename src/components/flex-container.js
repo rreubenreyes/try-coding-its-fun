@@ -9,8 +9,11 @@ const ContentWrapper = styled.div`
   justify-content: center;
   overflow-x: hidden;
   overflow-y: ${props => (props.headerVisible ? 'hidden' : 'auto')};
+  transition: all 0.2s;
+  transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   @media (max-width: 960px) {
     flex-wrap: wrap;
+    height: auto;
   }
 `
 const SidebarContainer = styled.div`
@@ -29,6 +32,7 @@ const SidebarContainer = styled.div`
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   @media (max-width: 960px) {
     background-color: #fff;
+    height: 1rem;
     flex-basis: 100vw;
     margin-bottom: 1.5rem;
     opacity: 1;
@@ -48,6 +52,9 @@ const MainContainer = styled.div`
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   @media (max-width: 960px) {
     padding-top: 0;
+    .nomatch--mobile-centered {
+      justify-content: center;
+    }
   }
 `
 const Divider = styled.div`

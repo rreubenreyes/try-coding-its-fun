@@ -13,23 +13,21 @@ export default class Layout extends Component {
     super(props)
     this.state = {
       headerVisible: false,
-      filtered: null
+      filtered: ''
     }
   }
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.setState({ filtered: null })
+      this.setState({ filtered: '' })
     }
   }
   handleFilters(searchInput) {
     this.setState({ filtered: searchInput })
-    console.log(searchInput)
   }
   handleVisibility(isVisible) {
     this.setState({
       headerVisible: isVisible
     })
-    console.log(isVisible)
   }
   render() {
     const { data } = this.props

@@ -8,12 +8,35 @@ export default class IndexPage extends Component {
   }
   render() {
     const data = this.props.data.allMarkdownRemark.edges
+    const filtered = this.props.filtered
+      ? this.props.filtered.split(' ').map(word => {
+          return word ? new RegExp(word, 'gi') : null
+        })
+      : ''
+    const posts = data
+      .filter(({ node }) => {
+        return filtered ? filtered.some(word => node.frontmatter.title.search(word) !== -1) : true
+      })
+      .map(({ node }) => {
+        return <PostListing key={node.id} post={node} />
+      })
     return (
       <FlexContainer
         renderMain={() => {
-          return data.map(({ node }) => {
-            return <PostListing key={node.id} post={node} />
-          })
+          return posts.length ? (
+            posts
+          ) : (
+            <span
+              className="nomatch--mobile-centered"
+              style={{
+                display: `flex`,
+                fontFamily: `'Quicksand', sans-serif`,
+                fontSize: `1rem`,
+                fontStyle: `italic`
+              }}>
+              {`Couldn't find anything matching your search. :(`}
+            </span>
+          )
         }}
         renderSidebar={() => 'A blog about the climb of self-taught devs, by a self-taught dev.'}
       />

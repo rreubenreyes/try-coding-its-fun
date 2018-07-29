@@ -22,7 +22,7 @@ const SearchInput = styled.input.attrs(keyframes.searchbar)`
   border-radius: 25px;
   box-shadow: 0 2px 0 0 #ccc;
   /* text: */
-  color: #656565;
+  color: #444;
   font-style: italic;
   letter-spacing: 0.53px;
   padding: 0.125rem 1rem;
