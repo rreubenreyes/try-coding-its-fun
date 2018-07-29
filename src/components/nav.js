@@ -37,10 +37,10 @@ const NavButton = styled(Link)`
 const Nav = () => {
   return (
     <NavBar>
-      <NavButton to="/coming-soon" color="tcifRed">
+      <NavButton to="/weeklies" color="tcifRed">
         {'weeklies'}
       </NavButton>
-      <NavButton to="/coming-soon" color="tcifBlue">
+      <NavButton to="/cool-projects" color="tcifBlue">
         {'cool projects'}
       </NavButton>
       <NavButton to="/about" color="tcifGreen">

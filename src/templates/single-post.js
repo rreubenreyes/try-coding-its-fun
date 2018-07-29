@@ -4,8 +4,15 @@ import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
 
 const Post = styled.div`
-  * {
-    margin: 0;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 1rem;
   }
   small {
     color: #9a86ee;
@@ -14,12 +21,15 @@ const Post = styled.div`
 const Body = styled.div`
   margin-top: 0.5rem;
 `
+const Title = styled.h1`
+  margin-bottom: 0 !important;
+`
 const SinglePost = ({ data }) => {
   return (
     <FlexContainer
       renderMain={() => (
         <Post>
-          <h1>{data.markdownRemark.frontmatter.title}</h1>
+          <Title>{data.markdownRemark.frontmatter.title}</Title>
           <small>{data.markdownRemark.frontmatter.date}</small>
           <Body
             dangerouslySetInnerHTML={{

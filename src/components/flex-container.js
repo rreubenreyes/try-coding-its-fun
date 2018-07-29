@@ -32,9 +32,9 @@ const SidebarContainer = styled.div`
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   @media (max-width: 960px) {
     background-color: #fff;
-    height: 1rem;
+    height: ${props => (props.show ? 'auto' : 0)};
     flex-basis: 100vw;
-    margin-bottom: 1.5rem;
+    margin-bottom: ${props => (props.show ? `1.5rem` : 0)};
     opacity: 1;
     padding-bottom: ${props => (props.headerVisible ? 0 : '1rem')};
     text-align: center;
@@ -46,7 +46,6 @@ const MainContainer = styled.div`
   flex-grow: 1;
   opacity: ${props => (props.animate ? 1 : 0)};
   padding-top: ${props => (props.headerVisible ? 0 : '2.5rem')};
-  text-align: ${props => (props.flex ? 'default' : 'center')};
   transform: ${props => (props.animate ? 'translateX(0%)' : 'translateX(200%)')};
   transition: transform 0.125s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
@@ -101,7 +100,8 @@ export default class FlexContainer extends Component {
             <SidebarContainer
               animate={this.state.animateIn}
               flex={this.state.applyFlexBasis}
-              headerVisible={headerVisible}>
+              headerVisible={headerVisible}
+              show={this.props.renderSidebar() ? true : false}>
               {this.props.renderSidebar() || ''}
             </SidebarContainer>
             {this.props.renderSidebar() ? (

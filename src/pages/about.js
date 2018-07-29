@@ -1,17 +1,48 @@
 import React, { Component } from 'react'
+import FlexContainer from '../components/flex-container'
+import styled from 'styled-components'
 
+const Post = styled.div`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 1rem;
+  }
+  small {
+    color: #9a86ee;
+  }
+`
 export default class About extends Component {
   render() {
     return (
-      <div>
-        <h1>{`Try Coding, It's Fun`}</h1>
-        <p>
-          Lorem ipsum dolor amet quinoa vaporware 3 wolf moon hoodie. Swag keffiyeh vice yr.
-          Kickstarter quinoa ramps green juice. Chia letterpress cold-pressed locavore
-          farm-to-table, kombucha venmo. Raw denim cred tilde umami. Seitan hot chicken church-key
-          woke umami.
-        </p>
-      </div>
+      <FlexContainer
+        renderMain={() => {
+          return (
+            <Post>
+              <h2>About the blog</h2>
+              <p>
+                <em>Try Coding, It's Fun</em> is dedicated to helping developers, self-taught or
+                otherwise, love what they code. We strongly identify with the idea that coding, no
+                matter the discipline or nature, is an extension of what's on your mind, limited
+                only by your own creativity.
+              </p>
+              <p>
+                Coding is an art as much as it is a science. What you create may be technical and
+                sophisticated in operation, beautiful and fluid in design, or any combination of
+                both. Write code that makes you excited, and you'll love the creations that follow.
+              </p>
+              <h2>About the author</h2>
+              <p>meep</p>
+            </Post>
+          )
+        }}
+        renderSidebar={() => null}
+      />
     )
   }
 }
