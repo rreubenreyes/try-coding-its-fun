@@ -16,7 +16,7 @@ export default class CoolProjects extends Component {
             </div>
           )
         }}
-        renderSidebar={() => null}
+        renderSidebar={() => 'Coming soon!'}
       />
     )
   }

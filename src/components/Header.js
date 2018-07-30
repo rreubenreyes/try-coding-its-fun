@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 import logo from '../static/images/logo.svg'
 import headerBg from '../static/images/header-bg.svg'
 import Nav from './nav'
@@ -69,28 +70,15 @@ const HeaderContainer = styled.div.attrs(keyframes.container)`
   }
 `
 export default class Header extends Component {
-  constructor(props) {
-    super(props)
+  static propTypes = {
+    visible: PropTypes.bool.isRequired
+  }
+  constructor() {
+    super()
     this.state = {
       view: 'default'
     }
   }
-  // componentDidMount() {
-  //   console.log(this.nav)
-  // }
-  // // componentDidUpdate(prevProps) {
-  // //   const path = this.props.location.pathname
-  // //   if (path !== prevProps.location.pathname) {
-  // //     if (path === '/') {
-  // //       this.setState({ view: 'default' })
-  // //     } else {
-  // //       this.setState({ view: 'collapsed' })
-  // //     }
-  // //   }
-  // // }
-  // handleVisibilityChange(visibility) {
-  //   console.log(`Header visible: ${visibility ? 'yes' : 'no'}`)
-  // }
   render() {
     return (
       <HeaderWrapper image={headerBg} view={this.state.view}>
@@ -98,7 +86,7 @@ export default class Header extends Component {
           <Link to="/">
             <img src={logo} alt="Try Coding, It's Fun" />
           </Link>
-          <Nav />
+          {this.props.visible ? <Nav headerVisible={true} /> : null}
         </HeaderContainer>
       </HeaderWrapper>
     )

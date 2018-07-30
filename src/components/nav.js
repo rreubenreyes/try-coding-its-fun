@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 const appColors = {
   tcifRed: 'rgba(252, 70, 117, 0.85)',
@@ -8,11 +9,6 @@ const appColors = {
   tcifBlue: 'rgba(104, 213, 226, 0.85)',
   tcifYellow: 'rgba(254, 209, 84, 0.85)'
 }
-const NavBar = styled.nav`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-`
 const NavButton = styled(Link)`
   position: relative;
   /* face: */
@@ -34,9 +30,29 @@ const NavButton = styled(Link)`
     box-shadow: 0 6px 0 0 ${props => appColors[props.color]};
   }
 `
-const Nav = () => {
+const NavBar = styled.nav`
+  display: flex;
+  flex-direction: ${props => (props.headerVisible ? 'row' : 'column')};
+  align-items: flex-end;
+  justify-content: ${props => (props.headerVisible ? 'center' : 'right')};
+  padding-top: ${props => (props.headerVisible ? 0 : '1rem')};
+  transition: transform 0.125s, padding-top 0.2s ease;
+  transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
+  width: 100%;
+  ${NavButton} {
+    margin: ${props => (props.headerVisible ? 'auto .1rem' : '.25rem 0')};
+  }
+  @media (max-width: 960px) {
+    flex-direction: row;
+    justify-content: center;
+    ${NavButton} {
+      margin: auto 0.1rem;
+    }
+  }
+`
+const Nav = props => {
   return (
-    <NavBar>
+    <NavBar headerVisible={props.headerVisible}>
       <NavButton to="/weeklies" color="tcifRed">
         {'weeklies'}
       </NavButton>
@@ -49,5 +65,7 @@ const Nav = () => {
     </NavBar>
   )
 }
-
+Nav.propTypes = {
+  headerVisible: PropTypes.bool.isRequired
+}
 export default Nav

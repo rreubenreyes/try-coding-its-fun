@@ -16,7 +16,7 @@ export default class Weeklies extends Component {
             </div>
           )
         }}
-        renderSidebar={() => null}
+        renderSidebar={() => 'Coming soon'}
       />
     )
   }

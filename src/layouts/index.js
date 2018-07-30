@@ -9,6 +9,9 @@ import VisibilitySensor from 'react-visibility-sensor'
 import './index.css'
 
 export default class Layout extends Component {
+  static propTypes = {
+    children: PropTypes.func
+  }
   constructor(props) {
     super(props)
     this.state = {
@@ -48,7 +51,7 @@ export default class Layout extends Component {
             this.handleVisibility(isVisible)
           }}
           partialVisibility={true}>
-          <Header data={data} />
+          <Header data={data} visible={this.state.headerVisible} />
         </VisibilitySensor>
         <Searchbar
           handleFilters={searchInput => debounceHandleFilters(searchInput)}
@@ -71,10 +74,6 @@ export default class Layout extends Component {
       </div>
     )
   }
-}
-
-Layout.propTypes = {
-  children: PropTypes.func
 }
 
 export const query = graphql`
