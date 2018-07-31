@@ -3,7 +3,6 @@ module.exports = {
     title: "Try Coding, It's Fun",
     desc: 'A blog about the climb of self-taught developers, by a climbing self-taught developer.'
   },
-  pathPrefix: '/try-coding-its-fun',
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-react-next',

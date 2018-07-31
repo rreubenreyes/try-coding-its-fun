@@ -49,6 +49,14 @@ export default class About extends Component {
                 what he's excited about, and writing sometimes unnecessarily complex code in an
                 attempt to translate his minimalistic and steadfast design style into web platforms.
               </p>
+              <p>
+                Currently working on{' '}
+                <em>
+                  <a href="https://ydkjs-exercises.com">YDKJS Exercises</a>
+                </em>{' '}
+                (open-source, contributors welcome!) and helping out with the East Bay React Meetup
+                Group (<a href="https://discord.gg/efHguJS">Join us on Discord!</a>)
+              </p>
             </Post>
           )
         }}
@@ -58,7 +66,9 @@ export default class About extends Component {
             <br />
             <a href="https://ydkjs-exercises.com">YDKJS Exercises</a>
             <br />
-            <a href="https://ydkjs-exercises.com">East Bay React Meetup Group</a>
+            <a href="https://www.meetup.com/East-Bay-React-Meetup-Group/">
+              East Bay React Meetup Group
+            </a>
           </div>
         )}
       />
