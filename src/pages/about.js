@@ -26,10 +26,12 @@ export default class About extends Component {
             <Post>
               <h2>About the blog</h2>
               <p>
-                <em>Try Coding, It's Fun</em> is dedicated to helping developers, self-taught or
-                otherwise, love what they code. We strongly identify with the idea that coding, no
-                matter the discipline or nature, is an extension of what's on your mind, limited
-                only by your own creativity.
+                <strong>
+                  <em>Try Coding, It's Fun</em>
+                </strong>{' '}
+                is dedicated to helping developers, self-taught or otherwise, love what they code.
+                We strongly identify with the idea that coding, no matter the discipline or nature,
+                is an extension of what's on your mind, limited only by your own creativity.
               </p>
               <p>
                 Coding is an art as much as it is a science. What you create may be technical and
@@ -37,11 +39,28 @@ export default class About extends Component {
                 both. Write code that makes you excited, and you'll love the creations that follow.
               </p>
               <h2>About the author</h2>
-              <p>meep</p>
+              <p>
+                <strong>
+                  <a href="https://twitter.com/radotreyes">
+                    <em>Reuben Reyes</em>
+                  </a>
+                </strong>{' '}
+                is a self-taught developer with a passion for humoring his imagination, over-sharing
+                what he's excited about, and writing sometimes unnecessarily complex code in an
+                attempt to translate his minimalistic and steadfast design style into web platforms.
+              </p>
             </Post>
           )
         }}
-        renderSidebar={() => null}
+        renderSidebar={() => (
+          <div>
+            <a href="https://reubenreyes.com">More about the author</a>
+            <br />
+            <a href="https://ydkjs-exercises.com">YDKJS Exercises</a>
+            <br />
+            <a href="https://ydkjs-exercises.com">East Bay React Meetup Group</a>
+          </div>
+        )}
       />
     )
   }

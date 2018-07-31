@@ -4,6 +4,8 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  width: auto !important;
+  overflow-x: hidden !important;
 }
 body {
   margin: 0;

@@ -29,6 +29,7 @@ const SearchInput = styled.input.attrs(keyframes.searchbar)`
   transition: ${keyframes.animation.transition};
   transition-timing-function: ${keyframes.animation.timing};
   width: calc(400px + 15vw);
+  max-width: 80vw;
   /* input: */
   z-index: 3;
   &:focus {

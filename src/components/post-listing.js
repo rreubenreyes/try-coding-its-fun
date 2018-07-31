@@ -8,7 +8,7 @@ const PostPreview = styled.div`
     color: #9a86ee;
   }
 `
-const PostLink = styled(Link)`
+export const FancyLink = styled(Link)`
   display: inline-block;
   position: relative;
   color: #444;
@@ -41,7 +41,7 @@ const PostExcerpt = styled.p`
 `
 const PostListing = ({ post }) => (
   <PostPreview>
-    <PostLink to={post.fields.slug}>{post.frontmatter.title}</PostLink>
+    <FancyLink to={post.fields.slug}>{post.frontmatter.title}</FancyLink>
     <PostExcerpt>{post.excerpt}</PostExcerpt>
     <small>{post.frontmatter.date}</small>
   </PostPreview>

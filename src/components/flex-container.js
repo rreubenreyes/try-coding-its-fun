@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Nav from '../components/nav'
+import Nav from './nav'
 import styled from 'styled-components'
 import { VisibilityContext } from '../data/visibility-context'
 

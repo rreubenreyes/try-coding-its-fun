@@ -60,7 +60,7 @@ const Nav = props => {
         {'cool projects'}
       </NavButton>
       <NavButton to="/about" color="tcifGreen">
-        {'the author'}
+        {'about us'}
       </NavButton>
     </NavBar>
   )
