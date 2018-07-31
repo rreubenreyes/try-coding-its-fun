@@ -46,8 +46,9 @@ export default class About extends Component {
                   </a>
                 </strong>{' '}
                 is a self-taught developer with a passion for humoring his imagination, over-sharing
-                what he's excited about, and writing sometimes unnecessarily complex code in an
-                attempt to translate his minimalistic and steadfast design style into web platforms.
+                what he's excited about, and writing sometimes unnecessarily complex code. His
+                professional statement is something along the lines of "...translating minimalistic
+                and steadfast design style into web platforms".
               </p>
               <p>
                 Currently working on{' '}
