@@ -1,8 +1,9 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Nav from './nav'
+import React, { Component } from 'react'
 import styled from 'styled-components'
 import { VisibilityContext } from '../data/visibility-context'
+import Nav from './nav'
+import { TcifAnchor, TcifLink } from './app-style'
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -32,6 +33,9 @@ const SidebarContainer = styled.div`
   transform: ${props => (props.animate ? 'translateX(0%)' : 'translateX(-1000%)')};
   transition: transform 0.2s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
+  * {
+    margin-bottom: 0.25rem;
+  }
   @media (max-width: 960px) {
     background-color: #fff;
     height: ${props => (props.show ? 'auto' : 0)};

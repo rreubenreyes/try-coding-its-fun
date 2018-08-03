@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import styled from 'styled-components'
-import _ from 'lodash'
 
 const keyframes = {
   animation: {

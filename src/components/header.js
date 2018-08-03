@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
-import styled from 'styled-components'
-import PropTypes from 'prop-types'
-import logo from '../static/images/logo.svg'
 import headerBg from '../static/images/header-bg.svg'
+import Link from 'gatsby-link'
+import logo from '../static/images/logo.svg'
 import Nav from './nav'
+import PropTypes from 'prop-types'
+import React, { Component } from 'react'
+import styled from 'styled-components'
 
 const keyframes = {
   animation: {

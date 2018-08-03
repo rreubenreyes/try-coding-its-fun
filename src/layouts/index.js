@@ -42,8 +42,14 @@ export default class Layout extends Component {
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' }
+            {
+              name: 'description',
+              content: 'A blog about helping developers love what they code.'
+            },
+            {
+              name: 'keywords',
+              content: 'development, progrmaming, coding, web development, web dev, blog, learning'
+            }
           ]}
         />
         <VisibilitySensor
