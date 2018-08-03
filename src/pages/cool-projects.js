@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
 
 export default class CoolProjects extends Component {
+  /**
+   * TODO: add the following projects
+   *  - JS30
+   *  - YDKJS Exercises
+   *  - Just Build Websites
+   */
   constructor(props) {
     super(props)
   }

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
 
 export default class Weeklies extends Component {
+  // TODO: add tags to GraphQL schema/markdown posts
+  // TODO: add Coffee Shop Sundays
   constructor(props) {
     super(props)
   }

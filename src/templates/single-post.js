@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'gatsby-link'
 import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
 
@@ -38,7 +37,7 @@ const SinglePost = ({ data }) => {
           />
         </Post>
       )}
-      renderSidebar={() => 'Share this post'}
+      renderSidebar={() => "Share this post (...soon. This feature's in the works!)"}
     />
   )
 }

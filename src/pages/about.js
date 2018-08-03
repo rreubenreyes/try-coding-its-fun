@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
+import { TcifAnchor } from '../components/app-style'
 import styled from 'styled-components'
 
 const Post = styled.div`
@@ -41,9 +42,7 @@ export default class About extends Component {
               <h2>About the author</h2>
               <p>
                 <strong>
-                  <a href="https://twitter.com/radotreyes">
-                    <em>Reuben Reyes</em>
-                  </a>
+                  <TcifAnchor href="https://twitter.com/radotreyes">Reuben Reyes</TcifAnchor>
                 </strong>{' '}
                 is a self-taught developer with a passion for humoring his imagination, over-sharing
                 what he's excited about, and writing sometimes unnecessarily complex code. His
@@ -53,23 +52,30 @@ export default class About extends Component {
               <p>
                 Currently working on{' '}
                 <em>
-                  <a href="https://ydkjs-exercises.com">YDKJS Exercises</a>
+                  <TcifAnchor href="https://ydkjs-exercises.com">YDKJS Exercises</TcifAnchor>
                 </em>{' '}
                 (open-source, contributors welcome!) and helping out with the East Bay React Meetup
-                Group (<a href="https://discord.gg/efHguJS">Join us on Discord!</a>)
+                Group (<TcifAnchor href="https://discord.gg/efHguJS">
+                  Join us on Discord!
+                </TcifAnchor>)
               </p>
             </Post>
           )
         }}
         renderSidebar={() => (
           <div>
-            <a href="https://reubenreyes.com">More about the author</a>
+            <p>Shameless plugs:</p>
+            <TcifAnchor href="https://reubenreyes.com">
+              <small>More about the author</small>
+            </TcifAnchor>
             <br />
-            <a href="https://ydkjs-exercises.com">YDKJS Exercises</a>
+            <TcifAnchor href="https://ydkjs-exercises.com">
+              <small>YDKJS Exercises</small>
+            </TcifAnchor>
             <br />
-            <a href="https://www.meetup.com/East-Bay-React-Meetup-Group/">
-              East Bay React Meetup Group
-            </a>
+            <TcifAnchor href="https://www.meetup.com/East-Bay-React-Meetup-Group/">
+              <small>East Bay React Meetup Group</small>
+            </TcifAnchor>
           </div>
         )}
       />
