@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
+import ø from '../data/shortcodes'
 
 export default class Weeklies extends Component {
   // TODO: add tags to GraphQL schema/markdown posts
@@ -14,11 +15,11 @@ export default class Weeklies extends Component {
           return (
             <div style={{ textAlign: 'center' }}>
               <h1>Weeklies</h1>
-              <em>Whoops! We're still working on this section. Check back soon!</em>
+              <em>{ø.øWIP}</em>
             </div>
           )
         }}
-        renderSidebar={() => 'Coming soon'}
+        renderSidebar={() => ø.øCS}
       />
     )
   }

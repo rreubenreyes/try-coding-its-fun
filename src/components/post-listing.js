@@ -1,4 +1,4 @@
-import { TcifLink } from './app-style'
+import { TcifLink } from '../data/app-style'
 import React from 'react'
 import styled from 'styled-components'
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
-import { TcifAnchor } from '../components/app-style'
+import { TcifAnchor } from '../data/app-style'
 import styled from 'styled-components'
 
 const Post = styled.div`

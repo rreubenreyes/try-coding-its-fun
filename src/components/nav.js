@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
-import { TcifButton } from './app-style'
+import { TcifButton } from '../data/app-style'
 
 const NavBar = styled.nav`
   /** 

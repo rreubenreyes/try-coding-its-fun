@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ø from '../data/shortcodes'
 import FlexContainer from '../components/flex-container'
 
 export default class CoolProjects extends Component {
@@ -22,7 +23,7 @@ export default class CoolProjects extends Component {
             </div>
           )
         }}
-        renderSidebar={() => 'Coming soon!'}
+        renderSidebar={() => ø.øCS}
       />
     )
   }

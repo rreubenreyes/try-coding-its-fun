@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { VisibilityContext } from '../data/visibility-context'
 import Nav from './nav'
-import { TcifAnchor, TcifLink } from './app-style'
 
 const ContentWrapper = styled.div`
   display: flex;
