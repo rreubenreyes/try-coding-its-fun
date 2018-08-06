@@ -5,9 +5,11 @@ import { VisibilityContext } from '../data/visibility-context'
 import Nav from './nav'
 
 const ContentWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-wrap: no-wrap;
   height: 100vh;
+  width: 100%;
   justify-content: center;
   overflow-x: hidden;
   overflow-y: ${props => (props.headerVisible ? 'hidden' : 'auto')};
@@ -57,6 +59,7 @@ const MainContainer = styled.div`
   transform: ${props => (props.animate ? 'translateX(0%)' : 'translateX(200%)')};
   transition: transform 0.125s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
+  width: inherit;
   @media (max-width: 960px) {
     padding-top: 0;
     .nomatch--mobile-centered {
