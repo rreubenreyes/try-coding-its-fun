@@ -94,7 +94,7 @@ Great! You've gotten your hands dirty. You're looking for more. Have you tried l
 
 > Too many options, maybe? cr. [Jose Aguinaga via HackerNoon](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f).
 
-Chances are, you've heard some of those words, and the fact that you don't know is giving you some anxiety. It happened to me too. The best advice I can give you right now is to not worry about any of that and stay your course of learning. _Maybe_ pick one framework to learn, but just one (for now). Why?
+Chances are, you've heard some of those words, and the fact that you don't know which one to pick is giving you some anxiety. That happened to me too. The best advice I can give you right now is to not worry about any of that and stay your course of learning. _Maybe_ pick one framework to learn, but just one (for now). Why?
 
 **_Learning too many frameworks or libraries at once will only bog you down_**.
 
