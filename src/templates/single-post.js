@@ -36,6 +36,7 @@ const Body = styled.div`
   img {
     height: auto;
     width: 100%;
+    margin-bottom: 0 !important;
   }
 `
 const Title = styled.h1`

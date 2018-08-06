@@ -118,7 +118,7 @@ But honestly, at this point you might still be looking for guidance. It's likely
 
 * [JavaScript 30](https://javascript30.com/) by [Wes Bos](https://wesbos.com/) is a fantastic free course which has you build mini-apps using _Just JavaScript™️_, and will help you really understand what's going on behind the browser.
 * [Just Build Websites](https://github.com/melanierichards/just-build-websites) by [Melanie Richards](https://www.melanie-richards.com/) is an enormous list of ideas for you to take on for your next project! I've actually been using this as a resource, and I can't recommend it enough.
-* [Meetup.com](https://www.meetup.com/) is the biggest meetup-focused social network out there right now, and thousands of developer meetups are hosted through it. I can't how important it is to go to your local meetup group and absorb everything!
+* [Meetup.com](https://www.meetup.com/) is the biggest meetup-focused social network out there right now, and thousands of developer meetups are hosted through it. I can't stress how important it is to go to your local meetup group and absorb everything!
 * Look into open-source projects on GitHub; maybe even start one! You get to put yourself in a decision-making position where you've got a team dependent on you----a huge stepping stone for many developers.
 
 ## Are you having fun yet?
