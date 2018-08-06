@@ -1,36 +1,18 @@
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import { VisibilityContext } from '../data/visibility-context'
 import Nav from './nav'
 
-const ContentWrapper = styled.div`
-  position: relative;
-  display: flex;
-  flex-wrap: no-wrap;
-  height: 100vh;
-  width: 100%;
-  justify-content: center;
-  overflow-x: hidden;
-  overflow-y: ${props => (props.headerVisible ? 'hidden' : 'auto')};
-  ::-webkit-scrollbar {
-    display: none;
-  }
-  transition: all 0.2s;
-  transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
-  @media (max-width: 960px) {
-    flex-wrap: wrap;
-    height: auto;
-  }
-`
 const SidebarContainer = styled.div`
   position: sticky;
-  align-self: stretch;
+  align-self: flex-start;
   top: 0;
   flex-basis: calc(25vw - 0.5px);
-  flex-grow: 1;
   font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
+  height: 100vh;
   opacity: ${props => (props.animate ? 1 : 0)};
   padding-top: ${props => (props.headerVisible ? 0 : '2.5rem')};
   text-align: right;
@@ -46,7 +28,6 @@ const SidebarContainer = styled.div`
     flex-basis: 100vw;
     margin-bottom: ${props => (props.show ? `1.5rem` : 0)};
     opacity: 1;
-    padding-bottom: ${props => (props.headerVisible ? 0 : '1rem')};
     text-align: center;
     z-index: 10;
   }
@@ -55,7 +36,6 @@ const MainContainer = styled.div`
   flex-basis: calc(75vw - 0.5px);
   flex-grow: 1;
   opacity: ${props => (props.animate ? 1 : 0)};
-  padding-top: ${props => (props.headerVisible ? 0 : '2.5rem')};
   transform: ${props => (props.animate ? 'translateX(0%)' : 'translateX(200%)')};
   transition: transform 0.125s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
@@ -75,7 +55,7 @@ const Divider = styled.div`
   flex-basis: 1px;
   flex-grow: 0;
   font-size: 5px;
-  height: 100%;
+  height: 100vh;
   margin: 0 2rem;
   padding-top: ${props => (props.headerVisible ? 0 : '2.5rem')};
   transition: padding-top 0.2s ease;
@@ -97,32 +77,41 @@ export default class FlexContainer extends Component {
     }
   }
   componentDidMount() {
+    this.main = ReactDOM.findDOMNode(this.main)
     this.setState({
       animateIn: true
     })
   }
+  focusMainContainer() {
+    console.log(this.main)
+  }
   render() {
     return (
       <VisibilityContext.Consumer>
-        {headerVisible => (
-          <ContentWrapper headerVisible={headerVisible}>
-            <SidebarContainer
-              animate={this.state.animateIn}
-              headerVisible={headerVisible}
-              show={this.props.renderSidebar() ? true : false}>
-              {this.props.renderSidebar()}
-              {headerVisible ? null : <Nav headerVisible={false} />}
-            </SidebarContainer>
-            {this.props.renderSidebar() ? (
-              <Divider headerVisible={headerVisible}>{'.'}</Divider>
-            ) : (
-              ''
-            )}
-            <MainContainer animate={this.state.animateIn} headerVisible={headerVisible}>
-              {this.props.renderMain()}
-            </MainContainer>
-          </ContentWrapper>
-        )}
+        {headerVisible => {
+          return (
+            <React.Fragment>
+              <SidebarContainer
+                animate={this.state.animateIn}
+                headerVisible={headerVisible}
+                show={this.props.renderSidebar() ? true : false}>
+                {this.props.renderSidebar()}
+                {headerVisible ? null : <Nav headerVisible={false} />}
+              </SidebarContainer>
+              {this.props.renderSidebar() ? (
+                <Divider headerVisible={headerVisible}>{'.'}</Divider>
+              ) : (
+                ''
+              )}
+              <MainContainer
+                animate={this.state.animateIn}
+                headerVisible={headerVisible}
+                ref={main => (this.main = main)}>
+                {this.props.renderMain()}
+              </MainContainer>
+            </React.Fragment>
+          )
+        }}
       </VisibilityContext.Consumer>
     )
   }

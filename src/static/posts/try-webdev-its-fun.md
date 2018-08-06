@@ -1,6 +1,7 @@
 ---
 title: "Try Web Development, It's Fun"
 date: '2018-08-05'
+author: 'Reuben Reyes'
 ---
 
 You've heard some talk about this "web development" thing. Maybe you've been doing it for a while; maybe you haven't written a line of code in your life. Wherever you come from and whatever your situation, here's a reason to take the leap into web development: It's fun. You should try it.<!-- end -->

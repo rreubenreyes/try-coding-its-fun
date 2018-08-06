@@ -41,11 +41,9 @@ export default class About extends Component {
               </p>
               <h2>About the author</h2>
               <p>
-                <strong>
-                  <TcifAnchor href="https://twitter.com/radotreyes">Reuben Reyes</TcifAnchor>
-                </strong>{' '}
-                is a self-taught developer with a passion for humoring his imagination, over-sharing
-                what he's excited about, and writing sometimes unnecessarily complex code. His
+                <TcifAnchor href="https://twitter.com/radotreyes">Reuben Reyes</TcifAnchor> is a
+                self-taught developer with a passion for humoring his imagination, over-sharing what
+                he's excited about, and writing sometimes unnecessarily complex code. His
                 professional statement is something along the lines of "...translating minimalistic
                 and steadfast design style into web platforms".
               </p>

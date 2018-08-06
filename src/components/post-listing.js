@@ -4,9 +4,6 @@ import styled from 'styled-components'
 
 const PostPreview = styled.div`
   margin-bottom: 1.5rem;
-  small {
-    color: #9a86ee;
-  }
 `
 const PostExcerpt = styled.p`
   margin-bottom: auto;
@@ -17,7 +14,10 @@ const PostListing = ({ post }) => (
       <h2>{post.frontmatter.title}</h2>
     </TcifLink>
     <PostExcerpt>{post.excerpt}</PostExcerpt>
-    <small>{post.frontmatter.date}</small>
+    <small>
+      {post.frontmatter.date} by{' '}
+      <span style={{ fontWeight: 'bolder', color: '#444' }}>{post.frontmatter.author}</span>
+    </small>
   </PostPreview>
 )
 

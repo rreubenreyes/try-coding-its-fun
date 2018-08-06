@@ -1,14 +1,14 @@
 import Link from 'gatsby-link'
 import styled, { css } from 'styled-components'
 
-const TcifColors = {
-  tcifRed: 'rgba(252, 70, 117, 0.85)',
-  tcifGreen: 'rgba(155, 215, 99, 0.85)',
-  tcifBlue: 'rgba(104, 213, 226, 0.85)',
-  tcifYellow: 'rgba(254, 209, 84, 0.85)',
+export const TcifColors = {
+  tcifRed: '#fc4675',
+  tcifGreen: '#9bd763',
+  tcifBlue: '#68d5e2',
+  tcifYellow: '#fed154',
   tcifPurple: '#9a86ee'
 }
-const IFancyLink = css`
+export const IFancyLink = css`
   display: inline-block;
   position: relative;
   text-decoration: none;
