@@ -100,7 +100,7 @@ Chances are, you've heard some of those words, and the fact that you don't know 
 
 **_If you pick up five frameworks now, what happens when you have to code without one?_**
 
-What's most important for you right now, and pretty much forever, is keeping up with your fundamentals. Scott Tolinski, who runs [Level Up Tutorials](https://www.leveluptutorials.com/), explains why during his [great talk at ZEIT Day 2018](https://www.youtube.com/watch?v=xK3BhwDRuL8).
+What's most important for you right now, and pretty much forever, is keeping up with your fundamentals. [Scott Tolinski](http://scotttolinski.com/), who runs [Level Up Tutorials](https://www.leveluptutorials.com/), explains why during his [great talk at ZEIT Day 2018](https://www.youtube.com/watch?v=xK3BhwDRuL8).
 
 (_To Framework, or Not To Framework?_ is actually quite a hot topic in web development right now, and it probably deserves its own post at the time of writing. I digress.)
 
