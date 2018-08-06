@@ -3,12 +3,15 @@ import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
 
 const Post = styled.div`
-  h1,
+  h1 {
+    margin-bottom: 0.5rem;
+  }
   h2,
   h3,
   h4,
   h5 {
     margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
   }
   p {
     margin-bottom: 1rem;
@@ -18,7 +21,23 @@ const Post = styled.div`
   }
 `
 const Body = styled.div`
+  display: flex;
+  flex-flow: row wrap;
+  text-align: left;
   margin-top: 0.5rem;
+  blockquote {
+    flex-basis: 100%;
+    text-align: center;
+    margin-top: -1rem;
+  }
+  pre {
+    flex-basis: 100%;
+  }
+  img {
+    height: auto;
+    width: 100%;
+    margin-bottom: 0 !important;
+  }
 `
 const Title = styled.h1`
   margin-bottom: 0 !important;
@@ -35,6 +54,9 @@ const SinglePost = ({ data }) => {
               __html: data.markdownRemark.html
             }}
           />
+          <span id="secret" style={{ display: 'none' }}>
+            If you think pineapple doesn't belong on pizza, you're wrong. Don't @ me.
+          </span>
         </Post>
       )}
       renderSidebar={() => "Share this post (...soon. This feature's in the works!)"}
