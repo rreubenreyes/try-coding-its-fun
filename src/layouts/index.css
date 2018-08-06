@@ -58,8 +58,9 @@ abbr[title] {
 }
 b,
 strong {
+  background: rgba(154, 134, 238, 0.2);
   font-weight: inherit;
-  font-weight: bolder;
+  font-weight: bolder !important;
 }
 dfn {
   font-style: italic;
@@ -441,6 +442,8 @@ fieldset {
   margin-bottom: 1.45rem;
 }
 blockquote {
+  font-size: 0.7rem;
+  font-style: italic;
   margin-left: 1.45rem;
   margin-right: 1.45rem;
   margin-top: 0;
@@ -516,7 +519,7 @@ th {
   font-weight: bold;
 }
 li {
-  margin-bottom: calc(1.45rem / 2);
+  margin-bottom: calc(1rem / 2);
 }
 ol li {
   padding-left: 0;
@@ -526,13 +529,13 @@ ul li {
 }
 li > ol {
   margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-bottom: calc(1.1rem / 2);
+  margin-top: calc(1.1rem / 2);
 }
 li > ul {
   margin-left: 1.45rem;
-  margin-bottom: calc(1.45rem / 2);
-  margin-top: calc(1.45rem / 2);
+  margin-bottom: calc(1.1rem / 2);
+  margin-top: calc(1.1rem / 2);
 }
 blockquote *:last-child {
   margin-bottom: 0;

@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import { VisibilityContext } from '../data/visibility-context'
 import Nav from './nav'
-import { TcifAnchor, TcifLink } from './app-style'
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -12,6 +11,9 @@ const ContentWrapper = styled.div`
   justify-content: center;
   overflow-x: hidden;
   overflow-y: ${props => (props.headerVisible ? 'hidden' : 'auto')};
+  ::-webkit-scrollbar {
+    display: none;
+  }
   transition: all 0.2s;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   @media (max-width: 960px) {
