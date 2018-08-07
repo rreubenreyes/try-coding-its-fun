@@ -54,6 +54,19 @@ const Body = styled.div`
     flex-basis: 100%;
     text-align: center;
     margin-top: -1rem;
+    margin-after: 1rem;
+    -webkit-margin-after: 0.5rem;
+    -moz-margin-after: 0.5rem;
+    -webkit-margin-end: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
   }
   pre {
     display: flex;
