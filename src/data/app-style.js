@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 
 export const TcifColors = {
   tcifBlue: '#68d5e2',
+  tcifDarkGray: '#222',
   tcifGray: '#ddd',
   tcifGreen: '#9bd763',
   tcifPurple: '#9a86ee',

@@ -2,6 +2,7 @@ import React, { Component, createContext } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Header from '../components/header'
+import Footer from '../components/footer'
 import Searchbar from '../components/searchbar'
 import _ from 'lodash'
 import { VisibilityContext } from '../data/visibility-context'
@@ -83,6 +84,7 @@ export default class Layout extends Component {
             })}
           </VisibilityContext.Provider>
         </Wrapper>
+        <Footer />
       </div>
     )
   }
