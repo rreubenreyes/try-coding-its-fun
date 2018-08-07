@@ -1,7 +1,7 @@
 import React from 'react'
 import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
-import { TcifPureButton, TcifColors } from '../data/app-style'
+import { TcifButtonExternal, TcifColors } from '../data/app-style'
 
 const twitterUrl = 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text='
 const Post = styled.div`
@@ -92,14 +92,14 @@ const SinglePostNav = styled.div`
   button:active {
     outline: none;
   }
-  ${TcifPureButton} {
+  ${TcifButtonExternal} {
     margin: 0.9rem 0 0.25rem;
     z-index: 10;
   }
   @media (max-width: 960px) {
     flex-direction: row;
     justify-content: center;
-    ${TcifPureButton} {
+    ${TcifButtonExternal} {
       margin: 0 0.1rem 0.5rem;
     }
   }
@@ -108,7 +108,12 @@ const Title = styled.h1`
   margin-bottom: 0 !important;
 `
 const SinglePost = ({ data }) => {
-  const tweet = typeof window !== 'undefined' ? `${twitterUrl} ${window.location.href}` : null
+  let tweet = null
+  try {
+    tweet = `${twitterUrl} ${window.location.href}`
+  } catch (TypeError) {
+    /* this shouldn't be rendered anywhere but the browser but just in case... */
+  }
   return (
     <FlexContainer
       renderMain={() => (
@@ -128,11 +133,9 @@ const SinglePost = ({ data }) => {
       )}
       renderSidebar={() => (
         <SinglePostNav>
-          <a className="button" href={tweet}>
-            <TcifPureButton fill={TcifColors.tcifBlue} color="tcifGray">
-              share on twitter
-            </TcifPureButton>
-          </a>
+          <TcifButtonExternal fill={TcifColors.tcifBlue} color="tcifGray" href={tweet}>
+            share on twitter
+          </TcifButtonExternal>
         </SinglePostNav>
       )}
     />

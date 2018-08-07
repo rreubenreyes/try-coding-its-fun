@@ -68,7 +68,7 @@ export const TcifAnchor = styled.a`
 export const TcifButton = styled(Link)`
   ${IFancyButton};
 `
-export const TcifPureButton = styled.button`
+export const TcifButtonExternal = styled.a`
   ${IFancyButton};
 `
 export const TcifLink = styled(Link)`
