@@ -7,7 +7,19 @@ import _ from 'lodash'
 import { VisibilityContext } from '../data/visibility-context'
 import VisibilitySensor from 'react-visibility-sensor'
 import './index.css'
+import styled from 'styled-components'
 
+const Wrapper = styled.div`
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0px 1.0875rem 1.45rem;
+  @media (max-width: 960px) {
+    flex-wrap: wrap;
+  }
+`
 export default class Layout extends Component {
   static propTypes = {
     children: PropTypes.func
@@ -63,22 +75,14 @@ export default class Layout extends Component {
           handleFilters={searchInput => debounceHandleFilters(searchInput)}
           view="default"
         />
-        <div
-          style={{
-            position: 'relative',
-            display: 'flex',
-            margin: '0 auto',
-            maxWidth: 1200,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0
-          }}>
+        <Wrapper>
           <VisibilityContext.Provider value={this.state.headerVisible}>
             {this.props.children({
               ...this.props,
               filtered: this.state.filtered
             })}
           </VisibilityContext.Provider>
-        </div>
+        </Wrapper>
       </div>
     )
   }

@@ -38,7 +38,7 @@ export default class IndexPage extends Component {
             </span>
           )
         }}
-        renderSidebar={() => 'A blog about loving what you code.'}
+        renderSidebar={() => <h4>A blog about loving what you code.</h4>}
       />
     )
   }

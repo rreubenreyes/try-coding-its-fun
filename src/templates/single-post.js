@@ -1,8 +1,9 @@
 import React from 'react'
 import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
-import { TcifColors } from '../data/app-style'
+import { TcifButtonExternal, TcifColors } from '../data/app-style'
 
+const twitterUrl = 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text='
 const Post = styled.div`
   p {
     margin-bottom: 1rem;
@@ -64,10 +65,26 @@ const Body = styled.div`
     margin-bottom: 0 !important;
   }
 `
+const SinglePostNav = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  ${TcifButtonExternal} {
+    margin: 0.9rem 0 0.25rem;
+  }
+  @media (max-width: 960px) {
+    flex-direction: row;
+    justify-content: center;
+    ${TcifButtonExternal} {
+      margin: 0 0.1rem 0.5rem;
+    }
+  }
+`
 const Title = styled.h1`
   margin-bottom: 0 !important;
 `
 const SinglePost = ({ data }) => {
+  const tweet = typeof window !== 'undefined' ? `${twitterUrl} ${window.location.href}` : null
   return (
     <FlexContainer
       renderMain={() => (
@@ -85,7 +102,13 @@ const SinglePost = ({ data }) => {
           </span>
         </Post>
       )}
-      renderSidebar={() => "Share this post (...soon. This feature's in the works!)"}
+      renderSidebar={() => (
+        <SinglePostNav>
+          <TcifButtonExternal href={tweet} fill={TcifColors.tcifBlue} color="tcifGray">
+            share on twitter
+          </TcifButtonExternal>
+        </SinglePostNav>
+      )}
     />
   )
 }

@@ -2,13 +2,33 @@ import Link from 'gatsby-link'
 import styled, { css } from 'styled-components'
 
 export const TcifColors = {
-  tcifRed: '#fc4675',
-  tcifGreen: '#9bd763',
   tcifBlue: '#68d5e2',
-  tcifYellow: '#fed154',
-  tcifPurple: '#9a86ee'
+  tcifGray: '#ddd',
+  tcifGreen: '#9bd763',
+  tcifPurple: '#9a86ee',
+  tcifRed: '#fc4675',
+  tcifYellow: '#fed154'
 }
-export const IFancyLink = css`
+const IFancyButton = css`
+  position: relative;
+  background: ${props => (props.fill ? props.fill : '#474843')};
+  box-shadow: 0 4px 0 0 ${props => TcifColors[props.color]};
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: calc(0.5rem + 0.5vh);
+  font-family: 'Quicksand', sans-serif;
+  letter-spacing: 0.75px;
+  margin: auto 0.1rem;
+  padding: 0.05rem 1rem 0.05rem 0.5rem;
+  text-decoration: none;
+  transition: 0.2s;
+  transition-timing-function: cubic-bezier(0.2, 0.4, 0.55, 0.1);
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 0 ${props => TcifColors[props.color]};
+  }
+`
+const IFancyLink = css`
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -17,7 +37,8 @@ export const IFancyLink = css`
   h2,
   h3,
   h4,
-  h5 {
+  h5,
+  h6 {
     margin-bottom: 0 !important;
   }
   &:after {
@@ -45,23 +66,10 @@ export const TcifAnchor = styled.a`
   color: ${TcifColors.tcifPurple};
 `
 export const TcifButton = styled(Link)`
-  position: relative;
-  background: #474843;
-  box-shadow: 0 4px 0 0 ${props => TcifColors[props.color]};
-  border-radius: 5px;
-  color: #ffffff;
-  font-size: calc(0.5rem + 0.5vh);
-  font-family: 'Quicksand', sans-serif;
-  letter-spacing: 0.75px;
-  margin: auto 0.1rem;
-  padding: 0.05rem 1rem 0.05rem 0.5rem;
-  text-decoration: none;
-  transition: 0.2s;
-  transition-timing-function: cubic-bezier(0.2, 0.4, 0.55, 0.1);
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 0 0 ${props => TcifColors[props.color]};
-  }
+  ${IFancyButton};
+`
+export const TcifButtonExternal = styled.a`
+  ${IFancyButton};
 `
 export const TcifLink = styled(Link)`
   ${IFancyLink};

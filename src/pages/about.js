@@ -62,7 +62,7 @@ export default class About extends Component {
         }}
         renderSidebar={() => (
           <div>
-            <p>Shameless plugs:</p>
+            <h4>Shameless plugs:</h4>
             <TcifAnchor href="https://reubenreyes.com">
               <small>More about the author</small>
             </TcifAnchor>
