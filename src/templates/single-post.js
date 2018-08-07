@@ -1,7 +1,7 @@
 import React from 'react'
 import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
-import { TcifButtonExternal, TcifColors } from '../data/app-style'
+import { TcifPureButton, TcifColors } from '../data/app-style'
 
 const twitterUrl = 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text='
 const Post = styled.div`
@@ -69,14 +69,24 @@ const SinglePostNav = styled.div`
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
-  ${TcifButtonExternal} {
+  a.button,
+  button {
+    text-decoration: none;
+    border: none;
+    outline: none;
+  }
+  a.button:active,
+  button:active {
+    outline: none;
+  }
+  ${TcifPureButton} {
     margin: 0.9rem 0 0.25rem;
     z-index: 10;
   }
   @media (max-width: 960px) {
     flex-direction: row;
     justify-content: center;
-    ${TcifButtonExternal} {
+    ${TcifPureButton} {
       margin: 0 0.1rem 0.5rem;
     }
   }
@@ -105,9 +115,11 @@ const SinglePost = ({ data }) => {
       )}
       renderSidebar={() => (
         <SinglePostNav>
-          <TcifButtonExternal href={tweet} fill={TcifColors.tcifBlue} color="tcifGray">
-            share on twitter
-          </TcifButtonExternal>
+          <a className="button" href={tweet}>
+            <TcifPureButton fill={TcifColors.tcifBlue} color="tcifGray">
+              share on twitter
+            </TcifPureButton>
+          </a>
         </SinglePostNav>
       )}
     />
