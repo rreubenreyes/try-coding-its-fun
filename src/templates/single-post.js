@@ -3,7 +3,6 @@ import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
 import { TcifButtonExternal, TcifColors } from '../data/app-style'
 
-const twitterUrl = 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text='
 const Post = styled.div`
   p {
     margin-bottom: 1rem;
@@ -108,12 +107,12 @@ const Title = styled.h1`
   margin-bottom: 0 !important;
 `
 const SinglePost = ({ data }) => {
-  let tweet = null
-  try {
-    tweet = `${twitterUrl} ${window.location.href}`
-  } catch (TypeError) {
-    /* this shouldn't be rendered anywhere but the browser but just in case... */
-  }
+  const tweet =
+    typeof window !== undefined
+      ? 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text=' +
+        window.location.href
+      : null
+
   return (
     <FlexContainer
       renderMain={() => (
