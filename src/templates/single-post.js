@@ -71,6 +71,7 @@ const SinglePostNav = styled.div`
   justify-content: flex-end;
   ${TcifButtonExternal} {
     margin: 0.9rem 0 0.25rem;
+    z-index: 10;
   }
   @media (max-width: 960px) {
     flex-direction: row;

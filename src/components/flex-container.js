@@ -37,9 +37,9 @@ const SidebarContainer = styled.div`
     background-color: #fff;
     height: auto;
     flex-basis: 100vw;
+    margin: 1rem 0 1.5rem;
     padding-top: 0;
     text-align: center;
-    z-index: 10;
   }
 `
 const MainContainer = styled.div`
