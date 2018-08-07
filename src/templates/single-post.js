@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
 import { TcifButtonExternal, TcifColors } from '../data/app-style'
@@ -106,39 +106,43 @@ const SinglePostNav = styled.div`
 const Title = styled.h1`
   margin-bottom: 0 !important;
 `
-const SinglePost = ({ data }) => {
-  const tweet =
-    typeof window !== undefined
-      ? 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text=' +
-        window.location.href
-      : null
-
-  return (
-    <FlexContainer
-      renderMain={() => (
-        <Post>
-          <Title>{data.markdownRemark.frontmatter.title}</Title>
-          <small>
-            {data.markdownRemark.frontmatter.date} by{' '}
-            <span style={{ fontWeight: 'bolder', color: '#444' }}>
-              {data.markdownRemark.frontmatter.author}
+class SinglePost extends Component {
+  constructor(props) {
+    super(props)
+    this.tweet = 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text='
+  }
+  componentDidMount() {
+    typeof window !== 'undefined' ? (this.tweet += window.location.href) : (this.tweet = null)
+  }
+  render() {
+    const { data } = this.props
+    return (
+      <FlexContainer
+        renderMain={() => (
+          <Post>
+            <Title>{data.markdownRemark.frontmatter.title}</Title>
+            <small>
+              {data.markdownRemark.frontmatter.date} by{' '}
+              <span style={{ fontWeight: 'bolder', color: '#444' }}>
+                {data.markdownRemark.frontmatter.author}
+              </span>
+            </small>
+            <Body dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+            <span id="secret" style={{ display: 'none' }}>
+              If you think pineapple doesn't belong on pizza, you're wrong. Don't @ me.
             </span>
-          </small>
-          <Body dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-          <span id="secret" style={{ display: 'none' }}>
-            If you think pineapple doesn't belong on pizza, you're wrong. Don't @ me.
-          </span>
-        </Post>
-      )}
-      renderSidebar={() => (
-        <SinglePostNav>
-          <TcifButtonExternal fill={TcifColors.tcifBlue} color="tcifGray" href={tweet}>
-            share on twitter
-          </TcifButtonExternal>
-        </SinglePostNav>
-      )}
-    />
-  )
+          </Post>
+        )}
+        renderSidebar={() => (
+          <SinglePostNav>
+            <TcifButtonExternal fill={TcifColors.tcifBlue} color="tcifGray" href={this.tweet}>
+              share on twitter
+            </TcifButtonExternal>
+          </SinglePostNav>
+        )}
+      />
+    )
+  }
 }
 
 export default SinglePost
