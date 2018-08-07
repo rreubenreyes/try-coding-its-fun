@@ -19,15 +19,25 @@ const SidebarContainer = styled.div`
   transform: ${props => (props.animate ? 'translateX(0%)' : 'translateX(-1000%)')};
   transition: transform 0.2s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
-  * {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-bottom: 0.25rem;
   }
+  h4,
+  h5,
+  h6 {
+    margin-top: 0.125rem;
+  }
   @media (max-width: 960px) {
+    position: relative;
     background-color: #fff;
-    height: ${props => (props.show ? 'auto' : 0)};
+    height: auto;
     flex-basis: 100vw;
-    margin-bottom: ${props => (props.show ? `1.5rem` : 0)};
-    opacity: 1;
+    padding-top: 0;
     text-align: center;
     z-index: 10;
   }

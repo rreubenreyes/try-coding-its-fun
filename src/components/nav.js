@@ -12,7 +12,6 @@ const NavBar = styled.nav`
   flex-direction: ${props => (props.headerVisible ? 'row' : 'column')};
   align-items: flex-end;
   justify-content: ${props => (props.headerVisible ? 'center' : 'right')};
-  padding-top: ${props => (props.headerVisible ? 0 : '1rem')};
   transition: transform 0.125s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   width: 100%;
@@ -20,11 +19,7 @@ const NavBar = styled.nav`
     margin: ${props => (props.headerVisible ? 'auto .1rem' : '.25rem 0')};
   }
   @media (max-width: 960px) {
-    flex-direction: row;
-    justify-content: center;
-    ${TcifButton} {
-      margin: auto 0.1rem;
-    }
+    display: ${props => (props.headerVisible ? 'default' : 'none')};
   }
 `
 const Nav = props => {
