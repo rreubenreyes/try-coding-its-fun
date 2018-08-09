@@ -9,6 +9,7 @@ import { VisibilityContext } from '../data/visibility-context'
 import VisibilitySensor from 'react-visibility-sensor'
 import './index.css'
 import styled from 'styled-components'
+import favicon from '../static/images/favicon.png'
 
 const Wrapper = styled.div`
   position: relative;
@@ -57,14 +58,16 @@ export default class Layout extends Component {
           meta={[
             {
               name: 'description',
-              content: 'A blog about helping developers love what they code.'
+              content: 'A blog about loving what you code.'
             },
             {
               name: 'keywords',
               content: 'development, progrmaming, coding, web development, web dev, blog, learning'
             }
-          ]}
-        />
+          ]}>
+          <link key="canonical" rel="canonical" href="https://trycodingitsfun.com" />
+          <link key="icon" rel="icon" href={favicon} />
+        </Helmet>
         <VisibilitySensor
           onChange={isVisible => {
             this.handleVisibility(isVisible)
