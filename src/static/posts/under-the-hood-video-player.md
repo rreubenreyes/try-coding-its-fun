@@ -8,9 +8,11 @@ In this series, we'll be inspecting some web apps and components that you probab
 
 ![Under the Hood app on CodePen!](https://cl.ly/0u1D2b201133/Image%2525202018-08-13%252520at%2525208.24.09%252520PM.png)
 
+> Check out the first [Under the Hood app on CodePen!](https://codepen.io/radotreyes/full/EpJKgK/)
+
 ---
 
-## Welcome to a new series!
+## What's this about?
 
 Quick, name five methods on the HTML5 `video` tag! ...
 
@@ -39,8 +41,6 @@ You typed that code in yourself, saw the result, and learned something new! Unfo
 With that aside, I encourage you to check out the first [Under the Hood app on CodePen](https://codepen.io/radotreyes/full/EpJKgK/)! This app exposes the code being executed when you interact with an HTML5 video player, so you can skip all the wading through the docs and see the API for yourself!
 
 ![Under the Hood GIF](https://cl.ly/0z0l3X3K3e3I/Screen%20Recording%202018-08-14%20at%2009.32%20PM.gif)
-
-> Check out the first [Under the Hood app on CodePen!](https://codepen.io/radotreyes/full/EpJKgK/)
 
 ### Editor's notes
 
