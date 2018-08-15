@@ -66,6 +66,7 @@ const Body = styled.div`
   h6 {
     margin-top: 0.5rem !important;
     margin-bottom: 0.5rem !important;
+    width: 100%;
   }
   pre {
     display: flex;
