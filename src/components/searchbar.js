@@ -14,12 +14,13 @@ const keyframes = {
 }
 const SearchInput = styled.input.attrs(keyframes.searchbar)`
   position: absolute;
-  top: ${props => props[props.view].top};
+  top: calc(175px + 10vh);
   /* face: */
   background: #fff;
   border: 1px solid transparent;
   border-radius: 25px;
   box-shadow: 0 2px 0 0 #ccc;
+  -webkit-box-shadow: 0 2px 0 0 #ccc;
   /* text: */
   color: #444;
   font-style: italic;
@@ -32,7 +33,6 @@ const SearchInput = styled.input.attrs(keyframes.searchbar)`
   /* input: */
   z-index: 3;
   &:focus {
-    box-shadow: 0 2px 0 0 #ccc;
     outline: none !important;
   }
 `

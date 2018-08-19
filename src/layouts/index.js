@@ -75,10 +75,7 @@ export default class Layout extends Component {
           partialVisibility={true}>
           <Header data={data} visible={this.state.headerVisible} />
         </VisibilitySensor>
-        <Searchbar
-          handleFilters={searchInput => debounceHandleFilters(searchInput)}
-          view="default"
-        />
+        <Searchbar handleFilters={searchInput => debounceHandleFilters(searchInput)} />
         <Wrapper>
           <VisibilityContext.Provider value={this.state.headerVisible}>
             {this.props.children({

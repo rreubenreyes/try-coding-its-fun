@@ -25,7 +25,7 @@ const SidebarContainer = styled.div`
   h4,
   h5,
   h6 {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.33rem;
   }
   h4,
   h5,
@@ -80,8 +80,6 @@ export default class FlexContainer extends Component {
   }
   constructor(props) {
     super(props)
-    this.main = null
-    this.sidebar = null
     this.state = {
       animateIn: false
     }
@@ -113,10 +111,7 @@ export default class FlexContainer extends Component {
               ) : (
                 ''
               )}
-              <MainContainer
-                animate={this.state.animateIn}
-                headerVisible={headerVisible}
-                ref={main => (this.main = main)}>
+              <MainContainer animate={this.state.animateIn} headerVisible={headerVisible}>
                 {this.props.renderMain()}
               </MainContainer>
             </React.Fragment>

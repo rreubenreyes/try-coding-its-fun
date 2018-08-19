@@ -2,11 +2,12 @@
 title: "Under the Hood: The HTML5 Video Player"
 date: '2018-08-13'
 author: 'Reuben Reyes'
+thumbnail: '../thumbnails/under-the-hood-video-player.jpg'
 ---
 
 In this series, we'll be inspecting some web apps and components that you probably see everywhere, but maybe never really looked into. This time we'll be finding out how HTML5 video players work with an interactive example!<!-- end -->
 
-![Under the Hood app on CodePen!](https://cl.ly/0u1D2b201133/Image%2525202018-08-13%252520at%2525208.24.09%252520PM.png)
+![Under the Hood app on CodePen!](http://res.cloudinary.com/try-coding-its-fun/image/upload/f_auto,q_auto/v1534708946/under-the-hood.png)
 
 > Check out the first [Under the Hood app on CodePen!](https://codepen.io/radotreyes/full/EpJKgK/)
 
@@ -30,7 +31,7 @@ What do you _mean_ `video.mute()` isn't a valid function? How else am I supposed
 
 If you're like me, your first impulse when you run into a situation like that is to do this:
 
-![Don't ever try to get information on an element using __proto__.](https://cl.ly/0V381A0u0W3D/Image%202018-08-14%20at%208.42.00%20PM.png)
+![Don't ever try to get information on an element using __proto__.](http://res.cloudinary.com/try-coding-its-fun/image/upload/f_auto,q_auto/v1534709064/video-proto.png)
 
 > This gives you every property and method that's being passed down through the video tag's _entire_ prototype chain.
 
@@ -40,7 +41,7 @@ You typed that code in yourself, saw the result, and learned something new! Unfo
 
 With that aside, I encourage you to check out the first [Under the Hood app on CodePen](https://codepen.io/radotreyes/full/EpJKgK/)! This app exposes the code being executed when you interact with an HTML5 video player, so you can skip all the wading through the docs and see the API for yourself!
 
-![Under the Hood GIF](https://cl.ly/0z0l3X3K3e3I/Screen%20Recording%202018-08-14%20at%2009.32%20PM.gif)
+![Under the Hood GIF](http://res.cloudinary.com/try-coding-its-fun/image/upload/q_auto/v1534709103/under-the-hood-demo.gif)
 
 ### Editor's notes
 

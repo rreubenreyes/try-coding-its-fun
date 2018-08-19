@@ -54,6 +54,15 @@ export const query = graphql`
             author
             title
             date(formatString: "MMMM DD, YYYY")
+            thumbnail {
+              id
+              childImageSharp {
+                id
+                sizes(maxHeight: 250) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
           excerpt
           fields {

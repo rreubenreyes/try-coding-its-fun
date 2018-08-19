@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import FlexContainer from '../components/flex-container'
 import styled from 'styled-components'
-import { TcifButtonExternal, TcifColors } from '../data/app-style'
+import { TcifButtonExternal, TcifColors, IFancyLink } from '../data/app-style'
 
 const Post = styled.div`
   p {
@@ -16,47 +16,16 @@ const Body = styled.div`
   text-align: left;
   width: 100%;
   a {
-    display: inline-block;
-    position: relative;
-    color: ${TcifColors.tcifPurple};
-    text-decoration: none;
-    width: auto;
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      margin-bottom: 0 !important;
-    }
-    &:after {
-      display: block;
-      position: relative;
-      top: 0.25rem;
-      border-bottom: 1px solid #979797;
-      content: '';
-      margin-top: ${props => (props.isHeader ? '-0.125rem' : '-0.25rem')};
-      margin-bottom: ${props => (props.isHeader ? '0.25rem' : 0)};
-      transform: scaleX(0);
-      transform-origin: 0% 50%;
-      transition: transform 0.2s;
-      transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
-      width: 100%;
-    }
-    &:hover:after {
-      position: relative;
-      transform: scaleX(1);
-      width: 100%;
-    }
+    ${IFancyLink};
   }
   blockquote {
-    flex-basis: 100%;
-    text-align: center;
-    margin-top: -1rem;
-    margin-after: 1rem;
-    -webkit-margin-after: 0.5rem;
-    -moz-margin-after: 0.5rem;
+    -moz-margin-after: 1rem;
+    -webkit-margin-after: 1rem;
     -webkit-margin-end: 0;
+    flex-basis: 100%;
+    margin-left: 0 !important;
+    margin-top: -1rem;
+    text-align: center;
   }
   h1,
   h2,

@@ -29,7 +29,8 @@ const IFancyButton = css`
     box-shadow: 0 6px 0 0 ${props => TcifColors[props.color]};
   }
 `
-const IFancyLink = css`
+export const IFancyLink = css`
+  color: ${TcifColors.tcifPurple};
   display: inline-block;
   position: relative;
   text-decoration: none;
@@ -48,7 +49,7 @@ const IFancyLink = css`
     top: 0.25rem;
     border-bottom: 1px solid #979797;
     content: '';
-    margin-top: ${props => (props.isHeader ? '-0.125rem' : '-0.25rem')};
+    margin-top: ${props => (props.isHeader ? '-0.125rem' : '-0.4rem')};
     margin-bottom: ${props => (props.isHeader ? '0.25rem' : 0)};
     transform: scaleX(0);
     transform-origin: 0% 50%;

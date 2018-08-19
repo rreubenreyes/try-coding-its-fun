@@ -2,6 +2,7 @@
 title: "Try Web Development, It's Fun"
 date: '2018-08-05'
 author: 'Reuben Reyes'
+thumbnail: '../thumbnails/try-webdev-its-fun.jpg'
 ---
 
 You've heard some talk about this "web development" thing. Maybe you've been doing it for a while; maybe you haven't written a line of code in your life. Wherever you come from and whatever your situation, here's a reason to take the leap into web development: It's fun. You should try it.<!-- end -->
@@ -68,7 +69,7 @@ I get it. Even if you're not actually brand new, the hard part with any project 
 
 What you'll find almost instantly is a welcoming community of learners, ranging from novice developers who hadn't written code in their lives to experts trying to give back to the community. What you'll also find is an [enormous collection](https://learn.freecodecamp.org/) of modules for helping you learn, starting from the [basics of HTML](https://learn.freecodecamp.org/responsive-web-design/basic-html-and-html5) to [interview prep and algorithm challenges in JavaScript](https://learn.freecodecamp.org/coding-interview-prep/algorithms).
 
-![My progress with freeCodeCamp. I am indeed a pleb.](https://cl.ly/3d3S1B3c1S3Q/Image%2525202018-08-05%252520at%2525206.36.24%252520PM.png)
+![My progress with freeCodeCamp. I am indeed a pleb.](https://res.cloudinary.com/try-coding-its-fun/image/upload/v1534708847/Image_2525202018-08-05_252520at_2525206.36.24_252520PM.png)
 
 > My progress with freeCodeCamp. I am indeed a pleb.
 
@@ -91,7 +92,7 @@ Great! You've gotten your hands dirty. You're looking for more. Have you tried l
 * [Vapor](https://vapor.codes/)
 * Wait, what?
 
-![A picture of a billion JavaScript frameworks](https://cdn-images-1.medium.com/max/2000/1*raWO3dhM4jMjf9VY-kZzNg.png)
+![A picture of a billion JavaScript frameworks](https://res.cloudinary.com/try-coding-its-fun/image/upload/v1534708874/1_raWO3dhM4jMjf9VY-kZzNg.png)
 
 > Too many options, maybe? cr. [Jose Aguinaga via HackerNoon](https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f).
 
