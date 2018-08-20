@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import FlexContainer from '../components/flex-container'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import FlexContainer from '../components/flex-container'
 import { TcifButtonExternal, TcifColors, IFancyLink } from '../data/app-style'
 
 const Post = styled.div`
@@ -77,13 +78,20 @@ const Title = styled.h1`
   margin-bottom: 0 !important;
 `
 class SinglePost extends Component {
+  static propTypes = { data: PropTypes.object.isRequired }
+
   constructor(props) {
     super(props)
-    this.tweet = 'https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text='
+    this.tweet = `https://twitter.com/intent/tweet?hashtags=TryCodingItsFun&related=webdev&text=`
   }
+
   componentDidMount() {
-    typeof window !== 'undefined' ? (this.tweet += window.location.href) : (this.tweet = null)
+    this.tweet =
+      typeof window !== `undefined`
+        ? (this.tweet += window.location.href)
+        : null
   }
+
   render() {
     const { data } = this.props
     return (
@@ -92,20 +100,28 @@ class SinglePost extends Component {
           <Post>
             <Title>{data.markdownRemark.frontmatter.title}</Title>
             <small>
-              {data.markdownRemark.frontmatter.date} by{' '}
-              <span style={{ fontWeight: 'bolder', color: '#444' }}>
+              {data.markdownRemark.frontmatter.date}
+              {` `}
+              by
+              {` `}
+              <span style={{ fontWeight: `bolder`, color: `#444` }}>
                 {data.markdownRemark.frontmatter.author}
               </span>
             </small>
-            <Body dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
-            <span id="secret" style={{ display: 'none' }}>
-              If you think pineapple doesn't belong on pizza, you're wrong. Don't @ me.
+            <Body
+              dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+            />
+            <span id="secret" style={{ display: `none` }}>
+              {`If you think pineapple doesn't belong on pizza, you're wrong. Don't @ me.`}
             </span>
           </Post>
         )}
         renderSidebar={() => (
           <SinglePostNav>
-            <TcifButtonExternal fill={TcifColors.tcifBlue} color="tcifGray" href={this.tweet}>
+            <TcifButtonExternal
+              fill={TcifColors.tcifBlue}
+              color="tcifGray"
+              href={this.tweet}>
               share on twitter
             </TcifButtonExternal>
           </SinglePostNav>
@@ -116,6 +132,8 @@ class SinglePost extends Component {
 }
 
 export default SinglePost
+
+/* eslint-disable no-undef */
 export const query = graphql`
   query SinglePostQuery($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {

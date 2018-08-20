@@ -1,15 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: "Try Coding, It's Fun",
-    desc: 'A blog about the climb of self-taught developers, by a climbing self-taught developer.'
+    title: `Try Coding, It's Fun`,
+    desc: `A blog about the climb of self-taught developers, by a climbing self-taught developer.`
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-react-next',
-    'gatsby-plugin-sharp',
-    'gatsby-plugin-styled-components',
-    'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-next`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-eslint`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`,
@@ -29,28 +30,28 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
+        name: `images`,
         path: `${__dirname}/src/static/images`
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'images',
+        name: `images`,
         path: `${__dirname}/src/static/thumbnails`
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'posts',
+        name: `posts`,
         path: `${__dirname}/src/static/posts`
       }
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-transformer-remark`,
       options: {
         excerpt_separator: `<!-- end -->`
       }

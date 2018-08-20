@@ -9,34 +9,32 @@ const NavBar = styled.nav`
    * TODO: create a mobile-friendly sticky nav solution
    */
   display: flex;
-  flex-direction: ${props => (props.headerVisible ? 'row' : 'column')};
+  flex-direction: ${props => (props.headerVisible ? `row` : `column`)};
   align-items: flex-end;
-  justify-content: ${props => (props.headerVisible ? 'center' : 'right')};
+  justify-content: ${props => (props.headerVisible ? `center` : `right`)};
   transition: transform 0.125s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   width: 100%;
   ${TcifButton} {
-    margin: ${props => (props.headerVisible ? 'auto .1rem' : '.25rem 0')};
+    margin: ${props => (props.headerVisible ? `auto .1rem` : `.25rem 0`)};
   }
   @media (max-width: 960px) {
-    display: ${props => (props.headerVisible ? 'default' : 'none')};
+    display: ${props => (props.headerVisible ? `default` : `none`)};
   }
 `
-const Nav = props => {
-  return (
-    <NavBar headerVisible={props.headerVisible}>
-      <TcifButton to="/weeklies" color="tcifRed">
-        {'weeklies'}
-      </TcifButton>
-      <TcifButton to="/cool-projects" color="tcifBlue">
-        {'cool projects'}
-      </TcifButton>
-      <TcifButton to="/about" color="tcifGreen">
-        {'about us'}
-      </TcifButton>
-    </NavBar>
-  )
-}
+const Nav = props => (
+  <NavBar headerVisible={props.headerVisible}>
+    <TcifButton to="/weeklies" color="tcifRed">
+      {`weeklies`}
+    </TcifButton>
+    <TcifButton to="/cool-projects" color="tcifBlue">
+      {`cool projects`}
+    </TcifButton>
+    <TcifButton to="/about" color="tcifGreen">
+      {`about us`}
+    </TcifButton>
+  </NavBar>
+)
 Nav.propTypes = {
   headerVisible: PropTypes.bool.isRequired
 }

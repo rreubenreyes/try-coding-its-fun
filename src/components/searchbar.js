@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 const keyframes = {
   animation: {
-    transition: '.15s',
-    timing: 'cubic-bezier(.15, .38, .91, .71)'
+    transition: `.15s`,
+    timing: `cubic-bezier(.15, .38, .91, .71)`
   },
   searchbar: {
     default: { top: `calc(161px + 10vh)` },
@@ -46,17 +46,20 @@ export default class Searchbar extends Component {
     handleFilters: PropTypes.func.isRequired,
     view: PropTypes.string.isRequired
   }
+
   constructor(props) {
     super(props)
     this.state = {
-      input: ''
+      input: ``
     }
   }
+
   handleChange(e) {
     e.preventDefault()
     this.setState({ input: e.target.value })
     this.props.handleFilters(e.target.value)
   }
+
   render() {
     return (
       <SearchWrapper>

@@ -1,8 +1,9 @@
-import { TcifLink } from '../data/app-style'
 import Img from 'gatsby-image'
 import Link from 'gatsby-link'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
+import { TcifLink } from '../data/app-style'
 
 const PostPreview = styled.div`
   margin-bottom: 1.5rem;
@@ -19,18 +20,27 @@ const PostImgPreview = styled(Img)`
 `
 const PostListing = ({ post }) => (
   <PostPreview>
-    <TcifLink isHeader={true} to={post.fields.slug}>
+    <TcifLink isHeader to={post.fields.slug}>
       <h2>{post.frontmatter.title}</h2>
     </TcifLink>
     <PostExcerpt>{post.excerpt}</PostExcerpt>
     <small>
       <Link to={post.fields.slug}>
-        <PostImgPreview sizes={post.frontmatter.thumbnail.childImageSharp.sizes} />
+        <PostImgPreview
+          sizes={post.frontmatter.thumbnail.childImageSharp.sizes}
+        />
       </Link>
-      {post.frontmatter.date} by{' '}
-      <span style={{ fontWeight: 'bolder', color: '#444' }}>{post.frontmatter.author}</span>
+      {post.frontmatter.date}
+      {` `}
+      by
+      {` `}
+      <span style={{ fontWeight: `bolder`, color: `#444` }}>
+        {post.frontmatter.author}
+      </span>
     </small>
   </PostPreview>
 )
-
+PostListing.propTypes = {
+  post: PropTypes.object.isRequired
+}
 export default PostListing

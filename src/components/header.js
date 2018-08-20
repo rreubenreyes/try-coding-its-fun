@@ -1,14 +1,14 @@
-import headerBg from '../static/images/header-bg.svg'
 import Link from 'gatsby-link'
-import logo from '../static/images/logo.svg'
-import Nav from './nav'
 import PropTypes from 'prop-types'
-import React, { Component } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import Nav from './nav'
+import logo from '../static/images/logo.svg'
+import headerBg from '../static/images/header-bg.svg'
 
 const animation = {
-  transition: '.15s',
-  timing: 'cubic-bezier(.15, .38, .91, .71)'
+  transition: `.15s`,
+  timing: `cubic-bezier(.15, .38, .91, .71)`
 }
 
 const HeaderWrapper = styled.div`
@@ -46,26 +46,17 @@ const HeaderContainer = styled.div`
     }
   }
 `
-export default class Header extends Component {
-  static propTypes = {
-    visible: PropTypes.bool.isRequired
-  }
-  constructor() {
-    super()
-    this.state = {
-      view: 'default'
-    }
-  }
-  render() {
-    return (
-      <HeaderWrapper image={headerBg}>
-        <HeaderContainer>
-          <Link to="/">
-            <img src={logo} alt="Try Coding, It's Fun" />
-          </Link>
-          {this.props.visible ? <Nav headerVisible={true} /> : null}
-        </HeaderContainer>
-      </HeaderWrapper>
-    )
-  }
+const Header = props => (
+  <HeaderWrapper image={headerBg}>
+    <HeaderContainer>
+      <Link to="/">
+        <img src={logo} alt="Try Coding, It's Fun" />
+      </Link>
+      {props.visible ? <Nav headerVisible /> : null}
+    </HeaderContainer>
+  </HeaderWrapper>
+)
+Header.propTypes = {
+  visible: PropTypes.bool.isRequired
 }
+export default Header

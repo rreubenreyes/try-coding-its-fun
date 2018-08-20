@@ -2,17 +2,17 @@ import Link from 'gatsby-link'
 import styled, { css } from 'styled-components'
 
 export const TcifColors = {
-  tcifBlue: '#68d5e2',
-  tcifDarkGray: '#222',
-  tcifGray: '#ddd',
-  tcifGreen: '#9bd763',
-  tcifPurple: '#9a86ee',
-  tcifRed: '#fc4675',
-  tcifYellow: '#fed154'
+  tcifBlue: `#68d5e2`,
+  tcifDarkGray: `#222`,
+  tcifGray: `#ddd`,
+  tcifGreen: `#9bd763`,
+  tcifPurple: `#9a86ee`,
+  tcifRed: `#fc4675`,
+  tcifYellow: `#fed154`
 }
 const IFancyButton = css`
   position: relative;
-  background: ${props => (props.fill ? props.fill : '#474843')};
+  background: ${props => (props.fill ? props.fill : `#474843`)};
   box-shadow: 0 4px 0 0 ${props => TcifColors[props.color]};
   border-radius: 5px;
   color: #ffffff;
@@ -49,8 +49,8 @@ export const IFancyLink = css`
     top: 0.25rem;
     border-bottom: 1px solid #979797;
     content: '';
-    margin-top: ${props => (props.isHeader ? '-0.125rem' : '-0.4rem')};
-    margin-bottom: ${props => (props.isHeader ? '0.25rem' : 0)};
+    margin-top: ${props => (props.isHeader ? `-0.125rem` : `-0.4rem`)};
+    margin-bottom: ${props => (props.isHeader ? `0.25rem` : 0)};
     transform: scaleX(0);
     transform-origin: 0% 50%;
     transition: transform 0.2s;

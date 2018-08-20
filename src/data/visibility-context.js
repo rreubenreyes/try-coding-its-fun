@@ -1,3 +1,5 @@
 import { createContext } from 'react'
 
-export const VisibilityContext = createContext()
+const VisibilityContext = createContext()
+
+export default VisibilityContext

@@ -1,14 +1,15 @@
-import React, { Component, createContext } from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import _ from 'lodash'
+import styled from 'styled-components'
+import VisibilitySensor from 'react-visibility-sensor'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Searchbar from '../components/searchbar'
-import _ from 'lodash'
-import { VisibilityContext } from '../data/visibility-context'
-import VisibilitySensor from 'react-visibility-sensor'
+import VisibilityContext from '../data/visibility-context'
 import './index.css'
-import styled from 'styled-components'
+
 import favicon from '../static/images/favicon.png'
 
 const Wrapper = styled.div`
@@ -24,28 +25,39 @@ const Wrapper = styled.div`
 `
 export default class Layout extends Component {
   static propTypes = {
-    children: PropTypes.func
+    children: PropTypes.func.isRequired,
+    data: PropTypes.func.isRequired,
+    location: PropTypes.object.isRequired
   }
+
   constructor(props) {
     super(props)
     this.state = {
       headerVisible: false,
-      filtered: ''
+      filtered: ``
     }
   }
+
   componentDidUpdate(prevProps) {
     if (this.props.location.pathname !== prevProps.location.pathname) {
-      this.setState({ filtered: '' })
+      this.handleUpdate()
     }
   }
+
+  handleUpdate() {
+    this.setState({ filtered: `` })
+  }
+
   handleFilters(searchInput) {
     this.setState({ filtered: searchInput })
   }
+
   handleVisibility(isVisible) {
     this.setState({
       headerVisible: isVisible
     })
   }
+
   render() {
     const { data } = this.props
     const debounceHandleFilters = _.debounce(this.handleFilters, 100, {
@@ -57,25 +69,31 @@ export default class Layout extends Component {
           title={data.site.siteMetadata.title}
           meta={[
             {
-              name: 'description',
-              content: 'A blog about loving what you code.'
+              name: `description`,
+              content: `A blog about loving what you code.`
             },
             {
-              name: 'keywords',
-              content: 'development, progrmaming, coding, web development, web dev, blog, learning'
+              name: `keywords`,
+              content: `development, progrmaming, coding, web development, web dev, blog, learning`
             }
           ]}>
-          <link key="canonical" rel="canonical" href="https://trycodingitsfun.com" />
+          <link
+            key="canonical"
+            rel="canonical"
+            href="https://trycodingitsfun.com"
+          />
           <link key="icon" rel="icon" href={favicon} />
         </Helmet>
         <VisibilitySensor
           onChange={isVisible => {
             this.handleVisibility(isVisible)
           }}
-          partialVisibility={true}>
+          partialVisibility>
           <Header data={data} visible={this.state.headerVisible} />
         </VisibilitySensor>
-        <Searchbar handleFilters={searchInput => debounceHandleFilters(searchInput)} />
+        <Searchbar
+          handleFilters={searchInput => debounceHandleFilters(searchInput)}
+        />
         <Wrapper>
           <VisibilityContext.Provider value={this.state.headerVisible}>
             {this.props.children({
@@ -90,6 +108,7 @@ export default class Layout extends Component {
   }
 }
 
+/* eslint-disable no-undef */
 export const query = graphql`
   query SiteTitleQuery {
     site {
