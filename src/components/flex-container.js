@@ -15,8 +15,7 @@ const SidebarContainer = styled.div`
   opacity: ${props => (props.animate ? 1 : 0)};
   padding-top: ${props => (props.headerVisible ? 0 : `2.5rem`)};
   text-align: right;
-  transform: ${props =>
-    props.animate ? `translateX(0%)` : `translateX(-1000%)`};
+  transform: ${props => (props.animate ? `translateX(0%)` : `translateX(-1000%)`)};
   transition: transform 0.2s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   h1,
@@ -46,8 +45,7 @@ const MainContainer = styled.div`
   flex-basis: calc(75vw - 0.5px);
   flex-grow: 1;
   opacity: ${props => (props.animate ? 1 : 0)};
-  transform: ${props =>
-    props.animate ? `translateX(0%)` : `translateX(200%)`};
+  transform: ${props => (props.animate ? `translateX(0%)` : `translateX(200%)`)};
   transition: transform 0.125s, padding-top 0.2s ease;
   transition-timing-function: cubic-bezier(0.39, 0.53, 0.11, 0.96);
   width: inherit;
@@ -77,19 +75,19 @@ const Divider = styled.div`
 export default class FlexContainer extends Component {
   static propTypes = {
     renderMain: PropTypes.func.isRequired,
-    renderSidebar: PropTypes.func.isRequired
+    renderSidebar: PropTypes.func.isRequired,
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      animateIn: false
+      animateIn: false,
     }
   }
 
   componentDidMount() {
     this.setState({
-      animateIn: true
+      animateIn: true,
     })
   }
 
@@ -101,18 +99,19 @@ export default class FlexContainer extends Component {
             <SidebarContainer
               animate={this.state.animateIn}
               headerVisible={headerVisible}
-              show={!!this.props.renderSidebar()}>
+              show={!!this.props.renderSidebar()}
+            >
               {this.props.renderSidebar()}
               {headerVisible ? null : <Nav headerVisible={false} />}
             </SidebarContainer>
             {this.props.renderSidebar() ? (
-              <Divider headerVisible={headerVisible}>{`.`}</Divider>
+              <Divider headerVisible={headerVisible}>
+                {`.`}
+              </Divider>
             ) : (
               ``
             )}
-            <MainContainer
-              animate={this.state.animateIn}
-              headerVisible={headerVisible}>
+            <MainContainer animate={this.state.animateIn} headerVisible={headerVisible}>
               {this.props.renderMain()}
             </MainContainer>
           </React.Fragment>

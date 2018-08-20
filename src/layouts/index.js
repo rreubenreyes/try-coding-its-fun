@@ -27,14 +27,14 @@ export default class Layout extends Component {
   static propTypes = {
     children: PropTypes.func.isRequired,
     data: PropTypes.func.isRequired,
-    location: PropTypes.object.isRequired
+    location: PropTypes.object.isRequired,
   }
 
   constructor(props) {
     super(props)
     this.state = {
       headerVisible: false,
-      filtered: ``
+      filtered: ``,
     }
   }
 
@@ -54,14 +54,14 @@ export default class Layout extends Component {
 
   handleVisibility(isVisible) {
     this.setState({
-      headerVisible: isVisible
+      headerVisible: isVisible,
     })
   }
 
   render() {
     const { data } = this.props
     const debounceHandleFilters = _.debounce(this.handleFilters, 100, {
-      maxWait: 1000
+      maxWait: 1000,
     }).bind(this)
     return (
       <div value={{ headerVisible: this.state.headerVisible }}>
@@ -70,35 +70,31 @@ export default class Layout extends Component {
           meta={[
             {
               name: `description`,
-              content: `A blog about loving what you code.`
+              content: `A blog about loving what you code.`,
             },
             {
               name: `keywords`,
-              content: `development, progrmaming, coding, web development, web dev, blog, learning`
-            }
-          ]}>
-          <link
-            key="canonical"
-            rel="canonical"
-            href="https://trycodingitsfun.com"
-          />
+              content: `development, progrmaming, coding, web development, web dev, blog, learning`,
+            },
+          ]}
+        >
+          <link key="canonical" rel="canonical" href="https://trycodingitsfun.com" />
           <link key="icon" rel="icon" href={favicon} />
         </Helmet>
         <VisibilitySensor
-          onChange={isVisible => {
+          onChange={(isVisible) => {
             this.handleVisibility(isVisible)
           }}
-          partialVisibility>
+          partialVisibility
+        >
           <Header data={data} visible={this.state.headerVisible} />
         </VisibilitySensor>
-        <Searchbar
-          handleFilters={searchInput => debounceHandleFilters(searchInput)}
-        />
+        <Searchbar handleFilters={searchInput => debounceHandleFilters(searchInput)} />
         <Wrapper>
           <VisibilityContext.Provider value={this.state.headerVisible}>
             {this.props.children({
               ...this.props,
-              filtered: this.state.filtered
+              filtered: this.state.filtered,
             })}
           </VisibilityContext.Provider>
         </Wrapper>

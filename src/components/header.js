@@ -8,7 +8,7 @@ import headerBg from '../static/images/header-bg.svg'
 
 const animation = {
   transition: `.15s`,
-  timing: `cubic-bezier(.15, .38, .91, .71)`
+  timing: `cubic-bezier(.15, .38, .91, .71)`,
 }
 
 const HeaderWrapper = styled.div`
@@ -57,6 +57,6 @@ const Header = props => (
   </HeaderWrapper>
 )
 Header.propTypes = {
-  visible: PropTypes.bool.isRequired
+  visible: PropTypes.bool.isRequired,
 }
 export default Header

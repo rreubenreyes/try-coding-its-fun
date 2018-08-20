@@ -86,10 +86,7 @@ class SinglePost extends Component {
   }
 
   componentDidMount() {
-    this.tweet =
-      typeof window !== `undefined`
-        ? (this.tweet += window.location.href)
-        : null
+    this.tweet = typeof window !== `undefined` ? (this.tweet += window.location.href) : null
   }
 
   render() {
@@ -98,7 +95,9 @@ class SinglePost extends Component {
       <FlexContainer
         renderMain={() => (
           <Post>
-            <Title>{data.markdownRemark.frontmatter.title}</Title>
+            <Title>
+              {data.markdownRemark.frontmatter.title}
+            </Title>
             <small>
               {data.markdownRemark.frontmatter.date}
               {` `}
@@ -108,9 +107,7 @@ class SinglePost extends Component {
                 {data.markdownRemark.frontmatter.author}
               </span>
             </small>
-            <Body
-              dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-            />
+            <Body dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
             <span id="secret" style={{ display: `none` }}>
               {`If you think pineapple doesn't belong on pizza, you're wrong. Don't @ me.`}
             </span>
@@ -118,10 +115,7 @@ class SinglePost extends Component {
         )}
         renderSidebar={() => (
           <SinglePostNav>
-            <TcifButtonExternal
-              fill={TcifColors.tcifBlue}
-              color="tcifGray"
-              href={this.tweet}>
+            <TcifButtonExternal fill={TcifColors.tcifBlue} color="tcifGray" href={this.tweet}>
               share on twitter
             </TcifButtonExternal>
           </SinglePostNav>

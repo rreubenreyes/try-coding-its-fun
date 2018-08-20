@@ -8,7 +8,7 @@ export const TcifColors = {
   tcifGreen: `#9bd763`,
   tcifPurple: `#9a86ee`,
   tcifRed: `#fc4675`,
-  tcifYellow: `#fed154`
+  tcifYellow: `#fed154`,
 }
 const IFancyButton = css`
   position: relative;

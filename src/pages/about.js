@@ -23,10 +23,14 @@ const About = () => (
   <FlexContainer
     renderMain={() => (
       <Post>
-        <h2>{`About the blog`}</h2>
+        <h2>
+          {`About the blog`}
+        </h2>
         <p>
           <strong>
-            <em>{`Try Coding, It's Fun`}</em>
+            <em>
+              {`Try Coding, It's Fun`}
+            </em>
           </strong>
           {` is dedicated to helping developers, self-taught or otherwise, love what they code. We
           strongly identify with the idea that coding, no matter the discipline or nature, is an
@@ -37,7 +41,9 @@ const About = () => (
           sophisticated in operation, beautiful and fluid in design, or any combination of both.
           Write code that makes you excited, and you'll love the creations that follow.`}
         </p>
-        <h2>{`About the author`}</h2>
+        <h2>
+          {`About the author`}
+        </h2>
         <p>
           <TcifAnchor href="https://twitter.com/radotreyes">
             {`Reuben Reyes`}
@@ -65,17 +71,25 @@ const About = () => (
     )}
     renderSidebar={() => (
       <div>
-        <h4>{`Shameless plugs:`}</h4>
+        <h4>
+          {`Shameless plugs:`}
+        </h4>
         <TcifAnchor href="https://reubenreyes.com">
-          <small>{`More about the author`}</small>
+          <small>
+            {`More about the author`}
+          </small>
         </TcifAnchor>
         <br />
         <TcifAnchor href="https://ydkjs-exercises.com">
-          <small>{`YDKJS Exercises`}</small>
+          <small>
+            {`YDKJS Exercises`}
+          </small>
         </TcifAnchor>
         <br />
         <TcifAnchor href="https://www.meetup.com/East-Bay-React-Meetup-Group/">
-          <small>{`East Bay React Meetup Group`}</small>
+          <small>
+            {`East Bay React Meetup Group`}
+          </small>
         </TcifAnchor>
       </div>
     )}

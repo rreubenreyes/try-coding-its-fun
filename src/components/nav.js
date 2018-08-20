@@ -36,6 +36,6 @@ const Nav = props => (
   </NavBar>
 )
 Nav.propTypes = {
-  headerVisible: PropTypes.bool.isRequired
+  headerVisible: PropTypes.bool.isRequired,
 }
 export default Nav

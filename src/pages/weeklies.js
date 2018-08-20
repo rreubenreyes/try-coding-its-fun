@@ -6,8 +6,12 @@ const Weeklies = () => (
   <FlexContainer
     renderMain={() => (
       <div style={{ textAlign: `center` }}>
-        <h1>{`Weeklies`}</h1>
-        <em>{ø.øWIP}</em>
+        <h1>
+          {`Weeklies`}
+        </h1>
+        <em>
+          {ø.WIP}
+        </em>
       </div>
     )}
     renderSidebar={() => ø.CS}

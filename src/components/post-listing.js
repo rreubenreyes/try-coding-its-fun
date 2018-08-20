@@ -21,14 +21,16 @@ const PostImgPreview = styled(Img)`
 const PostListing = ({ post }) => (
   <PostPreview>
     <TcifLink isHeader to={post.fields.slug}>
-      <h2>{post.frontmatter.title}</h2>
+      <h2>
+        {post.frontmatter.title}
+      </h2>
     </TcifLink>
-    <PostExcerpt>{post.excerpt}</PostExcerpt>
+    <PostExcerpt>
+      {post.excerpt}
+    </PostExcerpt>
     <small>
       <Link to={post.fields.slug}>
-        <PostImgPreview
-          sizes={post.frontmatter.thumbnail.childImageSharp.sizes}
-        />
+        <PostImgPreview sizes={post.frontmatter.thumbnail.childImageSharp.sizes} />
       </Link>
       {post.frontmatter.date}
       {` `}
@@ -41,6 +43,6 @@ const PostListing = ({ post }) => (
   </PostPreview>
 )
 PostListing.propTypes = {
-  post: PropTypes.object.isRequired
+  post: PropTypes.object.isRequired,
 }
 export default PostListing

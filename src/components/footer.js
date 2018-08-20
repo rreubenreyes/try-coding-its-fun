@@ -45,7 +45,9 @@ const Footer = () => (
   <FooterWrapper>
     <FooterContainer>
       <div>
-        <p>{`Try Coding, It's Fun © 2018. Welcoming contributors soon!`}</p>
+        <p>
+          {`Try Coding, It's Fun © 2018. Welcoming contributors soon!`}
+        </p>
       </div>
       <a href="https://github.com/radotreyes/try-coding-its-fun">
         <svg
@@ -55,7 +57,8 @@ const Footer = () => (
           className="svg-inline--fa fa-github fa-w-16"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 496 512">
+          viewBox="0 0 496 512"
+        >
           {/* eslint-disable max-len */}
           <path
             fill="currentColor"
@@ -72,7 +75,8 @@ const Footer = () => (
           className="svg-inline--fa fa-twitter fa-w-16"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512">
+          viewBox="0 0 512 512"
+        >
           {/* eslint-disable max-len */}
           <path
             fill="currentColor"

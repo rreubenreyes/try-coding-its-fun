@@ -5,12 +5,12 @@ import styled from 'styled-components'
 const keyframes = {
   animation: {
     transition: `.15s`,
-    timing: `cubic-bezier(.15, .38, .91, .71)`
+    timing: `cubic-bezier(.15, .38, .91, .71)`,
   },
   searchbar: {
     default: { top: `calc(161px + 10vh)` },
-    collapsed: { top: `calc(35px + 10vh)` }
-  }
+    collapsed: { top: `calc(35px + 10vh)` },
+  },
 }
 const SearchInput = styled.input.attrs(keyframes.searchbar)`
   position: absolute;
@@ -44,13 +44,13 @@ const SearchWrapper = styled.div`
 export default class Searchbar extends Component {
   static propTypes = {
     handleFilters: PropTypes.func.isRequired,
-    view: PropTypes.string.isRequired
+    view: PropTypes.string.isRequired,
   }
 
   constructor(props) {
     super(props)
     this.state = {
-      input: ``
+      input: ``,
     }
   }
 
