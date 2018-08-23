@@ -93,7 +93,7 @@ Sometimes elements contain inherent data, like HTML attributes or other properti
 
 #### Listeners
 
-**Listeners**, you might infer, _listen_ for **events**. When a user clicks a button, that's an event that is called on the button, and the button's listener "hears" that.
+**Listeners**, you might infer, _listen_ for **events**. When a user clicks a button, an event is called on the button, and the button's listener "hears" that.
 
 That button might then send some data back to the server, where that data is received as part of a request. The server then presumably does something with that data.Both the button and the server likely had listeners attached to them which allowed that data to move from client to server, and from the server to wherever its final destination is.
 
