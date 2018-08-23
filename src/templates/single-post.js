@@ -34,8 +34,17 @@ const Body = styled.div`
   h4,
   h5,
   h6 {
-    margin-top: 0.5rem !important;
+    margin-top: 0.25rem !important;
     margin-bottom: 0.5rem !important;
+    width: 100%;
+  }
+  ul, ol {
+    width: 100%;
+  }
+  hr {
+    align-self: center;
+    border: 0.25px solid transparent;
+    margin-top: .75rem;
     width: 100%;
   }
   pre {
@@ -43,8 +52,9 @@ const Body = styled.div`
     flex-basis: 100%;
   }
   img {
+    align-self: center;
     height: auto;
-    width: 100%;
+    width: 100vw;
     margin-bottom: 0 !important;
   }
 `
