@@ -79,7 +79,7 @@ Once you accept this separation between language (JavaScript) and environment (c
 
 When you take away both the browser and the server, what you're left with is... standard JavaScript! And by itself, JavaScript, the language, is just like any other language: A tool that we use to talk to the computer. But because we write code for the web, as it turns out, **there is a pretty specific pattern that we implement when we write web programs of any kind**.
 
-Our implementation of JS is mostly due to the nature of the kinds of problems we're solving as web developers. Familiarizing yourself with this pattern will help you approach problems with a far more specific mindset than otherwise, and will greatly aid in understanding the specifics of what you're working with
+Our implementation of JS is mostly due to the nature of the kinds of problems we're solving as web developers. Familiarizing yourself with this pattern will help you approach problems with a far more keen mindset than otherwise, and will greatly aid in understanding the details of what you're working with.
 
 ### The dynamic trio of a web program
 
