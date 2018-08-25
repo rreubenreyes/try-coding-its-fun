@@ -50,9 +50,9 @@ The functionality that the browser provides you doesn't end with the DOM. On the
 * [**Web Animations API**](http://devdocs.io/dom/web_animations_api), for programmatically animating DOM elements.
 * [**Payment Request API**](http://devdocs.io/dom/payment_request_api), for handling online transactions.
 
-I hope I've made my message clear at this point: When you write code for the frontend, what you're essentially doing is manipulating these APIs which are exposed to you. **So what happens when you take the browser away?**
+I hope I've made my message clear at this point: When you write code for the frontend, the majority of what you're doing is utilizing these APIs which are exposed to you. **So what happens when you take the browser away?**
 
-### On the Backend: Server APIs
+### On the backend: Server APIs
 
 ```javascript
 > node
