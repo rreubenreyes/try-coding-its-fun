@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import _ from 'lodash'
+import { debounce } from 'lodash'
 import styled from 'styled-components'
 import VisibilitySensor from 'react-visibility-sensor'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import MenuPopover from '../components/menu-popover'
 import Searchbar from '../components/searchbar'
 import VisibilityContext from '../data/visibility-context'
 import './index.css'
@@ -60,7 +61,7 @@ export default class Layout extends Component {
 
   render() {
     const { data } = this.props
-    const debounceHandleFilters = _.debounce(this.handleFilters, 100, {
+    const debounceHandleFilters = debounce(this.handleFilters, 100, {
       maxWait: 1000,
     }).bind(this)
     return (
@@ -78,9 +79,14 @@ export default class Layout extends Component {
             },
           ]}
         >
-          <link key="canonical" rel="canonical" href="https://trycodingitsfun.com" />
+          <link
+            key="canonical"
+            rel="canonical"
+            href="https://trycodingitsfun.com"
+          />
           <link key="icon" rel="icon" href={favicon} />
         </Helmet>
+        {!this.state.headerVisible && <MenuPopover />}
         <VisibilitySensor
           onChange={(isVisible) => {
             this.handleVisibility(isVisible)
@@ -89,7 +95,10 @@ export default class Layout extends Component {
         >
           <Header data={data} visible={this.state.headerVisible} />
         </VisibilitySensor>
-        <Searchbar handleFilters={searchInput => debounceHandleFilters(searchInput)} />
+        <Searchbar
+          handleFilters={searchInput => debounceHandleFilters(searchInput)}
+          headerVisible={this.state.headerVisible}
+        />
         <Wrapper>
           <VisibilityContext.Provider value={this.state.headerVisible}>
             {this.props.children({

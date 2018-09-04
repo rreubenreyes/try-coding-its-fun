@@ -111,7 +111,10 @@ export default class FlexContainer extends Component {
             ) : (
               ``
             )}
-            <MainContainer animate={this.state.animateIn} headerVisible={headerVisible}>
+            <MainContainer
+              animate={this.state.animateIn}
+              headerVisible={headerVisible}
+            >
               {this.props.renderMain()}
             </MainContainer>
           </React.Fragment>

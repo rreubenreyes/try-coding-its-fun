@@ -44,7 +44,6 @@ const SearchWrapper = styled.div`
 export default class Searchbar extends Component {
   static propTypes = {
     handleFilters: PropTypes.func.isRequired,
-    view: PropTypes.string.isRequired,
   }
 
   constructor(props) {
@@ -66,7 +65,6 @@ export default class Searchbar extends Component {
         <SearchInput
           onChange={e => this.handleChange(e)}
           placeholder="search blog posts"
-          view={this.props.view}
           value={this.state.input}
         />
       </SearchWrapper>
