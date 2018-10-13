@@ -63,11 +63,13 @@ Interviewing is not about getting a job. Interviewing is about sharing your skil
 
 Think about your other hobbies. For me, it's [Olympic weightlifting](https://en.wikipedia.org/wiki/Olympic_weightlifting). In weightlifting, there are two lifts: The snatch, and the clean and jerk. I am not particularly good at the [snatch](https://www.youtube.com/watch?v=3jdGt9cftyU), but I know others are, so I often ask my fellow athletes about their technique.
 
-We could end up talking for hours, sending videos back and forth and discussing the mechanics of the lift. _"How do you keep a solid position when the bar leaves the floor?"_. _"What do you think about when you're about to catch it?"_. My goal with these questions is obviously to better my technique so that I can lift more weight. To do that, of course I want to ask honest questions and receive honest answers in kind. More often than not, I leave the conversation with knowledge that I didn't have before, and I apply it to my training.
+We could end up talking for hours, sending videos back and forth and discussing the mechanics of the lift. _"How do you keep a solid position when the bar leaves the floor?"_. _"What do you think about when you're about to catch it?"_.
+
+My goal with these questions is obviously to better my technique so that I can lift more weight. To do that, of course I want to ask honest questions and receive honest answers in kind. More often than not, I leave the conversation with knowledge that I didn't have before, and I apply it to my training.
 
 I'm sure you see where this analogy is going. My goal in these conversations is to exchange knowledge, and often both parties in the conversation end up better off. This obviously applies to the development world as well, as **when you interview, you're exchanging knowledge about the company for knowledge about yourself**, and everybody ends up smarter and with a better idea of how to improve. Whether or not you get the job is just a side effect!
 
-Hopefully this takes some of the pressure off. Above all, **isn't becoming a better developer be your main goal**, as opposed to landing a sweet gig at Facebook?
+Hopefully this takes some of the pressure off. Above all, **isn't becoming a better developer your main goal**, as opposed to landing a sweet gig at Facebook?
 
 ### Putting in the work
 
@@ -101,7 +103,9 @@ If you have peers that you'd like to start practicing with, that's great! I reco
 
 If you'd like to collaborate online, I highly, _highly_ recommend [Pramp](https://www.pramp.com), which is a service that pairs you with strangers, where both of you take turns as the interviewer and the interviewee. You'll receive feedback from your peer and will find out exactly what you need to do to improve!
 
-**Practice interviews are the real key to getting through real ones.** You need to be quick on your feet, be able to answer questions about yourself, and be able to work under pressure. In a practice session with no real stakes, that's exactly what you will end up focusing on! It will be uncomfortable at first, but think about it this way: In the previous steps, you just spent a ton of time learning how to communicate and solve technical problems and learned a ton about yourself. Those skills are crucial to succeeding in interviews, and **because you've practiced them so much, the only step left for you is to apply those skills to actual interviews.**
+**Practice interviews are the real key to getting through real ones.** You need to be quick on your feet, be able to answer questions about yourself, and be able to work under pressure. In a practice session with no real stakes, that's exactly what you will end up focusing on!
+
+It will be uncomfortable at first, but think about it this way: In the previous steps, you just spent a ton of time learning how to communicate and solve technical problems and learned a ton about yourself. Those skills are crucial to succeeding in interviews, and **because you've practiced them so much, the only step left for you is to apply those skills to actual interviews.**
 
 #### Step four: Do it again
 
