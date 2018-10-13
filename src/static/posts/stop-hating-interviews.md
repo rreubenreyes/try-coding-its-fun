@@ -39,6 +39,8 @@ About a year and a half ago, I decided to take take the plunge into web developm
 
 I'd study relentlessly. I'd read the [Django docs](https://docs.djangoproject.com/en/2.1/) cover to cover. My [GitHub contribution map](https://github.com/radotreyes) was greener than Richard Hendricks trying to sell Pied Piper as a music player. **Something had to change, and that something was my mindset.**
 
+---
+
 ## A roadmap: Making interviews your jam
 
 As I said above, interviews are always a win-win for you, even though it might not seem that way at first. The very first step to conquering the fear of interviewing is to change how you think about interviewing. The most important thing to keep in mind is that **you have nothing to lose, and you have everything to gain!**
@@ -112,6 +114,8 @@ Not at all. You're not risking anything; **the worst case scenario in a real int
 * If everything goes well, you end up with a new job! Sweet!
 
 Interviewing is a win-win every time when you put the focus on yourself. Getting the job will follow.
+
+--
 
 ## Parting advice
 
