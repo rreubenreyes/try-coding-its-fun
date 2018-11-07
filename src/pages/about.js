@@ -45,7 +45,7 @@ const About = () => (
           {`About the author`}
         </h2>
         <p>
-          <TcifAnchor href="https://twitter.com/radotreyes">
+          <TcifAnchor href="https://twitter.com/rreubenreyes">
             {`Reuben Reyes`}
           </TcifAnchor>
           {` is a self-taught developer with a passion for humoring his imagination, over-sharing what

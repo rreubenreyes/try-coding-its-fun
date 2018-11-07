@@ -6,6 +6,10 @@
   "dependencies": {
     "babel-eslint": "^7.2.3",
     "babel-plugin-styled-components": "^1.5.1",
+    "eslint": "^5.8.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
     "gatsby": "^1.9.277",
     "gatsby-image": "^1.0.55",
     "gatsby-link": "^1.6.40",
@@ -37,6 +41,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-loader": "^2.1.0",
     "eslint-plugin-graphql": "^2.1.1",
     "gatsby-plugin-eslint": "^1.0.3",
